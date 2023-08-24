@@ -10,6 +10,9 @@ import { ListemedecinComponent } from './listemedecin/listemedecin.component';
 import { CalendrierrendezvousComponent } from './calendrierrendezvous/calendrierrendezvous.component';
 import { CreationrendezvousComponent } from './creationrendezvous/creationrendezvous.component';
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
+import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvou
     ListemedecinComponent,
     CalendrierrendezvousComponent,
     CreationrendezvousComponent,
-    DetailsrendezvousComponent
+    DetailsrendezvousComponent,
+    AdminloginComponent,
+    AdminaccueilComponent,
+    CreateAdminAccountComponent
   ],
   imports: [
     BrowserModule,
