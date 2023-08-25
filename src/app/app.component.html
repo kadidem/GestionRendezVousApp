@@ -1,4 +1,27 @@
 
-<!-- <app-header>  </app-header> -->
 
-<app-adminlogin></app-adminlogin>
+
+<nav class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        Logo
+      </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    
+    <ul class="nav-list">
+      <li><a routerLink="#" style="font-size: 20px; font-weight: bold;">Accueil</a></li>
+      <li><a routerLink="/liste-medecin" routerLinkActive="active" style="font-size: 20px; font-weight: bold;" >Liste medecin</a></li>
+      <i><a href="#" style="font-size: 20px; font-weight: bold;"></a>Contact</i>
+    </ul>
+  </nav>
+   
+
+<router-outlet></router-outlet>

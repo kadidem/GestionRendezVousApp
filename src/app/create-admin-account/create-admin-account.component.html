@@ -1,1 +1,31 @@
-<p>create-admin-account works!</p>
+
+<div id="container">
+    <div id="left">
+    
+    </div>
+    <div id="right">
+        <div class="haut">
+      <h1 id="login">Créer un compte</h1><br>
+      <input type="email" id="email" class="client-info">
+      <label for="email">Email</label>
+      <input type="password" id="password" class="client-info">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" class="client-info">
+      <label for="password">Confirme mot de passe</label>
+      <input type="submit" id="submit" class="client-info" style="cursor: pointer;" value="S'enregistrer">
+      <p  style="color:black; margin-left: 120px;"> Vous avez un compte admin ?<a routerLink="/admin-login" style="color: #38B198; cursor: pointer;">Se connecter</a> </p>
+
+    </div>
+    </div>
+  </div>
+
+<!-- <router-outlet></router-outlet> -->
+
+  
+  <script>
+   /* Work in proggress */
+   document.getElementById('see-button').addEventListener('click', evt => {
+	document.getElementById('blur-work').style.display = 'none';
+})
+   /* Work in proggress */
+  </script>

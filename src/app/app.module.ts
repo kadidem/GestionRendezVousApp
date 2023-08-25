@@ -12,10 +12,9 @@ import { CreationrendezvousComponent } from './creationrendezvous/creationrendez
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
-import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 
+import { AccueilComponent } from './accueil/accueil.component';
+import {MatDialogModule} from '@angular/material/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +27,12 @@ import { FooterComponent } from './footer/footer.component';
     DetailsrendezvousComponent,
     AdminloginComponent,
     AdminaccueilComponent,
-    CreateAdminAccountComponent,
-    HeaderComponent,
-    FooterComponent
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
