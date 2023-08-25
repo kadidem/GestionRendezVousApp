@@ -13,6 +13,8 @@ import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvou
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CreateAdminAccountComponent } from './create-admin-account/create-admin
     DetailsrendezvousComponent,
     AdminloginComponent,
     AdminaccueilComponent,
-    CreateAdminAccountComponent
+    CreateAdminAccountComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
