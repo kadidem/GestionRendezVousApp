@@ -14,7 +14,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 
 import { AccueilComponent } from './accueil/accueil.component';
-import {MatDialogModule} from '@angular/material/dialog'
+// import {MatDialogModule} from '@angular/material/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatDialogModule
+    // MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

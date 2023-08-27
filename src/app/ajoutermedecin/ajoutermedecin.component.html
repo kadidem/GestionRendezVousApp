@@ -1,1 +1,43 @@
-<p>ajoutermedecin works!</p>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- <div [@fadeInOut]>
+    
+  </div> -->
+
+  
+    
+    <div class="add-doctor-container" [@slideInOut]>
+        <h2 class="title">Ajouter un docteur</h2> <br>
+        <div class="trait">  </div>
+      
+        <div class="form-container">
+          <div class="image-preview">
+            <img [src]="imagePreview" alt="Aperçu de l'image">
+            <!-- <h4 class="title">Charger l'image</h4> -->
+          </div>
+          <h4 class="title" style="margin-left: 290px; cursor: pointer; margin-top: 15px;" (click)="triggerImageUpload()">Charger l'image</h4>
+          <input type="file" #imageInput style="display: none;" (change)="handleImageChange($event)" accept="image/*" class="input-field">
+          
+          <!-- <h4 class="title" style="margin-left:290px; margin-top:15px;"  (change)="handleImageChange($event)" accept="image/*" >Charger l'image</h4> -->
+          <!-- <input type="file" style="display:noe; margin-left:320px; margin-top:-50px; width:30px;" (change)="handleImageChange($event)" accept="image/*" class="input-field"> -->
+         
+          <form>
+            <div class="input-group">
+                <!-- <label for=""> Nom </label> -->
+              <input type="text" placeholder="Nom" class="input-field">
+              <input type="text" placeholder="Prénom" class="input-field">
+            
+              <input type="text" placeholder="Email" class="input-field">
+              <input type="tel" placeholder="Téléphone" class="input-field">
+            
+              <input type="text"  placeholder="Spécialité" class="input-field">
+            </div>
+            <button type="button" class="add-button"> <i class="fa fa-plus"> </i>  Ajouter</button>
+          </form>
+        </div>
+      </div>
+      
+

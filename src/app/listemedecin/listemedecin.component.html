@@ -1,126 +1,85 @@
-<!-- <h2>Responsive table</h2>
-<table class="table">
-  <thead>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+
+
+  <h2 style="margin-left: 100vh;" id="animation-text">Liste des docteurs</h2>
+  <!-- <button (click)="toggleAjouterMedecinForm()">Ajouter Médecin</button> -->
+
+ <button  class="btn" >  <i class="fa fa-plus"> </i> Ajouter  </button>
+ <!-- <app-ajoutermedecin *ngIf="showAjouterMedecinForm"></app-ajoutermedecin> -->
+ <!-- <div class="modal-overlay" >
+  <div class="modal-content">
+    <app-ajoutermedecin></app-ajoutermedecin>
+  </div>
+</div> -->
+
+
+  <table width="100%" style="margin-top: 10px;">
+
     <tr>
-      <th>Id</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="res-head">Id:</span>01</td>
-      <td><span class="res-head">Firstname:</span>Joydip</td>
-      <td><span class="res-head">Lastname:</span>Paul</td>
-      <td><span class="res-head">Email:</span>joydip@gmail.com</td>
-      <td class="action">
-        <button>Add</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>02</td>
-      <td><span class="res-head">Firstname:</span>Mark</td>
-      <td><span class="res-head">Lastname:</span>Bebuta</td>
-      <td><span class="res-head">Email:</span>markbebuta@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>03</td>
-      <td><span class="res-head">Firstname:</span>Alexa</td>
-      <td><span class="res-head">Lastname:</span>Crumble</td>
-      <td><span class="res-head">Email:</span>alexacrumble@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>04</td>
-      <td><span class="res-head">Firstname:</span>Jorina</td>
-      <td><span class="res-head">Lastname:</span>Chowdhury</td>
-      <td><span class="res-head">Email</span>jorinachowdhowdhury@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>05</td>
-      <td><span class="res-head">Firstname:</span>Tasnuva</td>
-      <td><span class="res-head">Lastname:</span>Khan</td>
-      <td><span class="res-head">Email</span>tasnuvakhan@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>06</td>
-      <td><span class="res-head">Firstname:</span>Alom</td>
-      <td><span class="res-head">Lastname:</span>Mia</td>
-      <td><span class="res-head">Email</span>alommia@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>07</td>
-      <td><span class="res-head">Firstname:</span>Jorina</td>
-      <td><span class="res-head">Lastname:</span>Begum</td>
-      <td><span class="res-head">Email</span>jorinabegum@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>08</td>
-      <td><span class="res-head">Firstname:</span>Alom</td>
-      <td><span class="res-head">Lastname:</span>Mia</td>
-      <td><span class="res-head">Email</span>alommia@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <td><span class="res-head">Id:</span>09</td>
-      <td><span class="res-head">Firstname:</span>Pranto</td>
-      <td><span class="res-head">Lastname:</span>Roy</td>
-      <td><span class="res-head">Email</span>prantoroy@gmail.com</td>
-      <td class="action">
-        <button>View</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
-<!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
-<button mat-raised-button (click)="openDialog('3000ms', '1500ms')">Open dialog slowly</button> -->
+        <th>Id</th>
+        <th>N ° Matricule</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Specialité</th>
+        <th>Action</th>
+        </tr>
+
+        <tr>
+          <td> 1</td>
+          <td> MB001</td>
+          <td> Bane</td>
+          <td>  Moussa</td>
+        <td> bane8251@gmail.com </td>
+        <td>  82511723</td>
+        <td> Docteur  </td>
+        <td>
+          <a href="#"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+        </td>
+     </tr>
+
+        <tr>
+          <td> 2</td>
+          <td> OS002</td>
+          <td> Sall</td>
+          <td>  Oumar</td>
+        <td> sall8251@gmail.com </td>
+        <td>  82511723</td>
+        <td> Docteur  </td>
+        
+        <td>
+          <a href="#"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+        </td>
+     </tr>
+
+        <tr>
+          <td> 3</td>
+          <td> AL001</td>
+          <td> Lah</td>
+          <td>  Aly</td>
+        <td> aly8251@gmail.com </td>
+        <td>  82511723</td>
+        <td> Docteur  </td>
+        <td>
+        <a href="#"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+        <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+        </td>
+     </tr>
+
+</table>
 
 
 
-<!-- <script>
-
-Swal.fire(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)
-</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const animationText = document.getElementById("animation-text");
+  
+    setTimeout(function() {
+      animationText.classList.add("hidden");
+    }, 5000);
+  });
+  </script>

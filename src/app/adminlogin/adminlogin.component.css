@@ -33,12 +33,15 @@ h1{
   transform: translate(-50%, -50%);
   background-color: var(--main-color);
   width: 1200px;
-  height: 600px;
+  height: 500px;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   box-shadow: var(--box-shadow);
   transition-duration: 1s;
+}
+a{
+  text-decoration: none;
 }
 
 #left, #right {

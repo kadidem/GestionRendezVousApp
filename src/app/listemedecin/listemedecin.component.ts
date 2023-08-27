@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+// import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+// import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-listemedecin',
