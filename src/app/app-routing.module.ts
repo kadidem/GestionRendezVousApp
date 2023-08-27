@@ -6,6 +6,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AjoutermedecinComponent } from './ajoutermedecin/ajoutermedecin.component';
+import { CalendrierrendezvousComponent } from './calendrierrendezvous/calendrierrendezvous.component';
+import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
+import { CreationrendezvousComponent } from './creationrendezvous/creationrendezvous.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'admin-login', component: AdminloginComponent},
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'liste-doc', component: ListemedecinComponent },
   { path: 'accueil', component: AccueilComponent },
   { path: 'add-doc', component: AjoutermedecinComponent },
+  { path: 'liste-rdv', component: CalendrierrendezvousComponent },
+  { path: 'details-rdv', component: DetailsrendezvousComponent },
+  { path: 'rdv', component: CreationrendezvousComponent },
   
  
 ];

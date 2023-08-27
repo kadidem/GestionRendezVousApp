@@ -1,0 +1,92 @@
+
+.add-doctor-container {
+    background-color: white;
+    width:500px;
+    /* gap:20px; */
+    height:300px;
+    margin-top: 10px;
+    margin-left:-30vh;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin:5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    color:#38B198;
+  }
+  
+  .title {
+    color: #38B198;
+    margin-bottom: 20px;
+  }
+  form>div>input{
+    display:block;
+    /* top:10px; */
+  }
+  form{
+    margin-top:30px;
+  }
+
+ .trait{
+    width:470px;
+    margin-top:-20px;
+    /* height:10px; */
+    /* color:#38B198; */
+    border:2px solid #38B198;
+  }
+  
+  .form-container {
+    display: block;
+    gap:20px;
+    /* flex-direction: column; */
+    margin:5px;
+    align-items: center;
+  
+  }
+  
+  
+ 
+  
+  .input-group {
+    /* display: block;
+    padding:5px;
+    align-items: center; */
+    /* margin-bottom: 10px; */
+  }
+  
+  .input-field {
+    padding: 5px;
+    margin:8px;
+    border: 1px solid #38B198;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .input-field::placeholder {
+    color: #38B198;
+  }
+  
+  .add-button {
+    margin-top: 10px;
+    margin-left:50vh;
+    width:150px;
+    padding: 10px 20px;
+    background-color: #38B198;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /*  */
+  
+
+ 
+  
+  

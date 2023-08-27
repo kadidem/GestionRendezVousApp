@@ -20,7 +20,7 @@ td {
 }
 
 tr:nth-child(even) td {
-  background-color: #f6f6f6;
+  background-color: #42f3d0;
 }
 
 tr:hover td {
@@ -58,4 +58,22 @@ tr:hover td {
   width: 130px; height:40px;
   font-size:20px;
   cursor: pointer;
+}
+
+
+#animation-text {
+  font-size: 24px;
+  text-align: center;
+  padding: 10px;
+  /* background-color: #f0f0f0; */
+  animation: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  display: none;
 }
