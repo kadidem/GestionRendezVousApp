@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { FooterComponent } from './footer/footer.component';
     AdminaccueilComponent,
     CreateAdminAccountComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

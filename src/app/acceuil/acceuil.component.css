@@ -1,0 +1,61 @@
+.carousel {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  .slider{
+    background-color: #38B198;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+ .slider h2{
+   margin-top: 30%;
+    font-size: 15px;
+    margin-left: 50px;
+    color: white;
+  }
+  .slider img{
+    opacity: 0.5;
+  }
+.apropos{
+margin-left: 44%;
+margin-right: 44%;
+  }
+.apropos p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.apropos hr{
+    height: 4px; /* Ajustez la valeur selon vos besoins */
+  background-color: #38B198; /* Couleur de la ligne */
+  border: none;
+}
+.aproposdenous{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    background-color: #38B198;
+}
+.aproposdenous h3{
+    margin-top: 20%;
+    color:white;
+}
+.doc{
+    background-color: #38B198;
+    width: 400px;
+    height: 250px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+.doc img{
+    width: 400px;
+    height: 180px;
+}
+.docteurli{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
