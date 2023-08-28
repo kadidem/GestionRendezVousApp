@@ -19,6 +19,9 @@ body {
   font-size: 22px;
   color: #fff;
 }
+a{
+  text-decoration: none;
+}
 .nav > .nav-list {
   display: flex;
   gap: 2rem;
