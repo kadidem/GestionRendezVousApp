@@ -10,7 +10,7 @@
   
     
     <div class="add-doctor-container" style="margin-left: 450px;" [@slideInOut]>
-        <h2 class="title">Ajouter un docteur</h2> <br>
+        <h2 class="title" >{{ isEditMode ? 'Modifier un médecin' : 'Ajouter un médecin' }}</h2> <br>
         <div class="trait">  </div>
       
         <div class="form-container">
@@ -35,7 +35,9 @@
             
               <input type="text"  placeholder="Spécialité" class="input-field">
             </div>
-            <button type="button" class="add-button"> <i class="fa fa-plus"> </i>  Ajouter</button>
+            <button type="button" class="add-button" >
+                 <i class="fa fa-plus"> </i> 
+                 {{ isEditMode ? 'Modifier' : 'Ajouter' }}</button>
           </form>
         </div>
       </div>

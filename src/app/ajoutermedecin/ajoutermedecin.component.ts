@@ -1,4 +1,4 @@
-import { Component , ViewChild, ElementRef} from '@angular/core';
+import { Component , ViewChild, ElementRef, EventEmitter, Output} from '@angular/core';
 
 
 @Component({
@@ -8,9 +8,32 @@ import { Component , ViewChild, ElementRef} from '@angular/core';
 })
 export class AjoutermedecinComponent {
 
-  imagePreview: string | ArrayBuffer | null = '/assets/image/Rectangle 89.png';
+  public imagePreview: string | ArrayBuffer | null = '/assets/image/Rectangle 89.png';
    
   @ViewChild('imageInput') imageInput!: ElementRef<HTMLInputElement>;
+
+  isEditMode = false;
+  isFormVisible = false;
+
+
+
+  @Output() formSubmitted = new EventEmitter<void>()
+  onSubmit() {
+
+    // Émettre l'événement pour signaler que le formulaire a été soumis
+    this.formSubmitted.emit();
+
+  }
+      
+        toggleFormWithDelay() {
+          setTimeout(() => {
+            this.isFormVisible = !this.isFormVisible;
+          }, 1000);// Delay of 1 second
+        }
+      toggleForm(isEditMode: boolean) {
+        this.isFormVisible = true;
+        this.isEditMode = isEditMode;
+      }
 
   handleImageChange(event: Event): void {
     const input = event.target as HTMLInputElement;

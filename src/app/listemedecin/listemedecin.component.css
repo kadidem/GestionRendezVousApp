@@ -19,6 +19,17 @@ td {
   color: #000000;
 }
 
+/* .form-container {
+  overflow: hidden; */
+  /* transition: max-height 0.5s ease-in-out; /* Transition pour la hauteur maximale */
+  /* max-height: 0; */ 
+   /* Masquer le formulaire initialement */
+/* } */
+/* .form-container.in {
+  max-height: 1000px; */
+   /* Hauteur maximale du formulaire lorsque visible */
+/* } */
+
 tr:nth-child(even) td {
   background-color: #42f3d0;
 }

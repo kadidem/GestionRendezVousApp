@@ -12,6 +12,8 @@ import { CreationrendezvousComponent } from './creationrendezvous/creationrendez
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AccueilComponent } from './accueil/accueil.component';
 // import {MatDialogModule} from '@angular/material/dialog'
@@ -32,6 +34,7 @@ import { AccueilComponent } from './accueil/accueil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     // MatDialogModule
   ],
   providers: [],
