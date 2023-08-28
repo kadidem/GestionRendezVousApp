@@ -16,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AccueilComponent } from './accueil/accueil.component';
-// import {MatDialogModule} from '@angular/material/dialog'
+import { FullCalendarModule } from '@fullcalendar/angular';
+import {MatDialogModule} from '@angular/material/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // MatDialogModule
+    FullCalendarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

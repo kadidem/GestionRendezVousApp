@@ -1,7 +1,7 @@
 
 
-<div class="add-doctor-container" style="margin-left: 450px; margin-top: 20px;" [@slideInOut]>
-    <h2 class="title" >Prendre rendez - vous</h2> <br>
+<div class="add-doctor-container" style="margin-left: 50px; margin-top: 40px;" [@slideInOut]>
+    <h2  (click)="openDialog()" class="title" >Prendre rendez - vous</h2> <br>
     <div class="trait">  </div>
   
     <div class="form-container">
@@ -27,9 +27,16 @@
 
         </div>
         <button type="button" class="add-button" >
-             <i class="fa fa-plus"> </i> 
+             <i class="fa fa-check"> </i> 
              Confirmer</button>
       </form>
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close type="button" class="btn" style="margin-left:-20px; margin-top: -90px;" >
+          <i class="fa fa-window-close"></i> Annuler
+        </button>
+
+      </div>
+
     </div>
   </div>
   

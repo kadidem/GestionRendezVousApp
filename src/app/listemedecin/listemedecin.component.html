@@ -1,22 +1,15 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
  
 
 
   <h2 style="margin-left: 5vh;" id="animation-text">Liste des docteurs</h2>
-  <!-- <button (click)="toggleAjouterMedecinForm()">Ajouter Médecin</button> -->
 
- <button  class="btn"  (click)="toggleFormWithDelay()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
- <!-- <app-ajoutermedecin *ngIf="showAjouterMedecinForm"></app-ajoutermedecin> -->
- <!-- <div class="modal-overlay" >
-  <div class="modal-content">
-    <app-ajoutermedecin></app-ajoutermedecin>
-  </div>
-</div> -->
+ <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
 
-<div class="form-container" [@slideDown]="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
+
+<!-- <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
 
 <app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin>
-</div>
+</div> -->
 
 
 
@@ -43,7 +36,7 @@
         <td>  82511723</td>
         <td> Docteur  </td>
         <td>
-          <a href="#"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+          <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
           <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
      </tr>
@@ -58,7 +51,7 @@
         <td> Docteur  </td>
         
         <td>
-          <a href="#"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+          <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
           <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
      </tr>
@@ -73,7 +66,7 @@
         <td> Docteur  </td>
         <td>
           <!-- (click)="toggleForm(true) -->
-        <a href="#"  (click)="toggleForm(true)"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+        <a  (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
         <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
      </tr>

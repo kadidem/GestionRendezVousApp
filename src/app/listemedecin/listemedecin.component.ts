@@ -1,28 +1,18 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { Component } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {MatDialog} from '@angular/material/dialog';
+import { AjoutermedecinComponent } from '../ajoutermedecin/ajoutermedecin.component';
 
 
 @Component({
   selector: 'app-listemedecin',
   templateUrl: './listemedecin.component.html',
-  styleUrls: ['./listemedecin.component.css'],
-    animations: [
-      trigger('slideDown', [
-        state('in', style({ opacity: 1, transform: 'translateY(0)' })),
-        transition('void => *', [
-          style({ opacity: 0, transform: 'translateY(-100%)' }),
-          animate('300ms ease-in-out')
-        ]),
-        transition('* => void', [
-          animate('300ms ease-in-out', style({ opacity: 0, transform: 'translateY(-100%)' }))
-        ])
-      ])
-    ]
+  styleUrls: ['./listemedecin.component.css']
 
 })
 export class ListemedecinComponent {
 
-  // constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}
+  constructor(private dialog: MatDialog) {}
 
       isFormVisible = false;
       isEditMode=false;
@@ -37,6 +27,18 @@ export class ListemedecinComponent {
           this.isFormVisible = true;
           this.isEditMode = isEditMode;
         }
+        
+        openDialog() {
+          const dialogRef = this.dialog.open(AjoutermedecinComponent,{
+            width: '650px',
+            height:'570px',
+          });
+
+            dialogRef.afterClosed().subscribe(result => {
+              console.log('Cette dialogue a été déjà fermer');
+            });
+          }
+          
         
 
 

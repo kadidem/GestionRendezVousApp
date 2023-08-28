@@ -18,9 +18,15 @@ export class AjoutermedecinComponent {
 
 
   @Output() formSubmitted = new EventEmitter<void>()
+ 
+
+
+
+
+  constructor() { }
+
   onSubmit() {
 
-    // Émettre l'événement pour signaler que le formulaire a été soumis
     this.formSubmitted.emit();
 
   }
