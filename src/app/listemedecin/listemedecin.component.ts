@@ -1,7 +1,9 @@
 import { MatDialogModule } from '@angular/material/dialog';
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AjoutermedecinComponent } from '../ajoutermedecin/ajoutermedecin.component';
+import { AjouterMedecinService } from '../services/ajouter-medecin.service';
+import { AjouterMedecin } from '../models/ajouter-medecin';
 
 
 @Component({
@@ -10,14 +12,38 @@ import { AjoutermedecinComponent } from '../ajoutermedecin/ajoutermedecin.compon
   styleUrls: ['./listemedecin.component.css']
 
 })
-export class ListemedecinComponent {
+export class ListemedecinComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) {}
+  constructor( private medecinService: AjouterMedecinService,  private dialog: MatDialog) {}
+
+  
+  medecin: any[] = [];
+  m: number = 1;
+
+
+  ngOnInit(): void {
+    this.medecin = this.medecinService.getMedecin();
+    const storageLocal = localStorage.getItem('saveMedecin');
+    if(storageLocal){
+      this.medecin = JSON.parse(storageLocal);
+    }
+  }
+
+  afficherMedecin(){
+    return this.medecinService.getMedecin();
+
+  }
+
+
+  supprimerMedecin(medecin: AjouterMedecin){
+     this.medecinService.supprimerMedecin(medecin);
+  }
 
       isFormVisible = false;
       isEditMode=false;
-      
 
+
+      
         toggleFormWithDelay() {
           setTimeout(() => {
             this.isFormVisible = !this.isFormVisible;

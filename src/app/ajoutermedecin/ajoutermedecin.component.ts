@@ -1,4 +1,8 @@
 import { Component , ViewChild, ElementRef, EventEmitter, Output} from '@angular/core';
+import { AjouterMedecinService } from '../services/ajouter-medecin.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AjouterMedecin } from '../models/ajouter-medecin';
+
 
 
 @Component({
@@ -17,20 +21,36 @@ export class AjoutermedecinComponent {
 
 
 
-  @Output() formSubmitted = new EventEmitter<void>()
- 
+  // @Output() formSubmitted = new EventEmitter<void>()
 
 
+  medecinForm !: FormGroup;
+  constructor(private formBuilder: FormBuilder, private medecinService: AjouterMedecinService) { 
 
-
-  constructor() { }
+    this.medecinForm = this.formBuilder.group({
+      id: [null],
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      email: ['', Validators.required],
+      telephone: ['', Validators.required],
+      specialite: ['', Validators.required],
+      image: ['', Validators.required]
+    });
+  }
 
   onSubmit() {
 
-    this.formSubmitted.emit();
-
+    if (this.medecinForm.valid) {
+      const newMedecin = this.medecinForm.value as AjouterMedecin;
+      this.medecinService.ajoutMedecin(newMedecin);
+      console.warn(newMedecin)
+      this.medecinForm.reset();
+    }
   }
       
+  deleteMedecin(){
+    this.medecinService.supprimerMedecin(this.medecinForm.value.id);
+  }
         toggleFormWithDelay() {
           setTimeout(() => {
             this.isFormVisible = !this.isFormVisible;

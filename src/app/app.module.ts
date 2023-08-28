@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import {MatDialogModule} from '@angular/material/dialog'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {MatDialogModule} from '@angular/material/dialog'
     AppRoutingModule,
     BrowserAnimationsModule,
     FullCalendarModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

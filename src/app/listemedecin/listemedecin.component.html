@@ -18,7 +18,6 @@
 
     <tr>
         <th>Id</th>
-        <th>N ° Matricule</th>
         <th>Nom</th>
         <th>Prenom</th>
         <th>Email</th>
@@ -27,49 +26,22 @@
         <th>Action</th>
         </tr>
 
-        <tr>
-          <td> 1</td>
-          <td> MB001</td>
-          <td> Bane</td>
-          <td>  Moussa</td>
-        <td> bane8251@gmail.com </td>
-        <td>  82511723</td>
-        <td> Docteur  </td>
+        <tr *ngFor="let med of medecin">
+          <td> {{med.id}} </td>
+          <td> {{med.nom}}</td>
+          <td> {{med.prenom}} </td>
+        <td> {{med.email}} </td>
+        <td> {{med.telephone}}  </td>
+        <td>  {{med.specialite}} </td>
         <td>
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
           <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
      </tr>
 
-        <tr>
-          <td> 2</td>
-          <td> OS002</td>
-          <td> Sall</td>
-          <td>  Oumar</td>
-        <td> sall8251@gmail.com </td>
-        <td>  82511723</td>
-        <td> Docteur  </td>
-        
-        <td>
-          <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
-        </td>
-     </tr>
+       
 
-        <tr>
-          <td> 3</td>
-          <td> AL001</td>
-          <td> Lah</td>
-          <td>  Aly</td>
-        <td> aly8251@gmail.com </td>
-        <td>  82511723</td>
-        <td> Docteur  </td>
-        <td>
-          <!-- (click)="toggleForm(true) -->
-        <a  (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-        <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
-        </td>
-     </tr>
+      
 
 </table>
 
