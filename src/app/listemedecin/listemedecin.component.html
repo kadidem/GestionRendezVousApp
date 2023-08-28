@@ -26,8 +26,9 @@
         <th>Action</th>
         </tr>
 
-        <tr *ngFor="let med of medecin">
-          <td> {{med.id}} </td>
+        <tr *ngFor="let med of medecin | paginate: { itemsPerPage: 3, currentPage: p }">
+          <td> </td>
+          <!-- <td> {{med.id}} </td> -->
           <td> {{med.nom}}</td>
           <td> {{med.prenom}} </td>
         <td> {{med.email}} </td>
@@ -37,13 +38,13 @@
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
           <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
+
      </tr>
 
-       
-
-      
-
 </table>
+
+<pagination-controls style="align-items: center; float: right; color: #38B198;" (pageChange)="p = $event"></pagination-controls>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {

@@ -19,11 +19,12 @@ export class ListemedecinComponent implements OnInit {
   
   medecin: any[] = [];
   m: number = 1;
+  p: number =1;
 
 
   ngOnInit(): void {
     this.medecin = this.medecinService.getMedecin();
-    const storageLocal = localStorage.getItem('saveMedecin');
+    const storageLocal = localStorage.getItem('listeMedecin');
     if(storageLocal){
       this.medecin = JSON.parse(storageLocal);
     }
@@ -36,7 +37,7 @@ export class ListemedecinComponent implements OnInit {
 
 
   supprimerMedecin(medecin: AjouterMedecin){
-     this.medecinService.supprimerMedecin(medecin);
+     this.medecinService.supprimerMedecin(medecin.id);
   }
 
       isFormVisible = false;

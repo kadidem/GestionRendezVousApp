@@ -1,6 +1,7 @@
 export class AjouterMedecin {
 
     constructor(
+        
         public id: number,
         public image: string,
         public nom: string,

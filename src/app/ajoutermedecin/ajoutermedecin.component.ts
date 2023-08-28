@@ -5,6 +5,8 @@ import { AjouterMedecin } from '../models/ajouter-medecin';
 
 
 
+
+
 @Component({
   selector: 'app-ajoutermedecin',
   templateUrl: './ajoutermedecin.component.html',
@@ -24,18 +26,25 @@ export class AjoutermedecinComponent {
   // @Output() formSubmitted = new EventEmitter<void>()
 
 
-  medecinForm !: FormGroup;
+   medecinForm! : FormGroup;
   constructor(private formBuilder: FormBuilder, private medecinService: AjouterMedecinService) { 
 
     this.medecinForm = this.formBuilder.group({
-      id: [null],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', Validators.required],
       telephone: ['', Validators.required],
       specialite: ['', Validators.required],
-      image: ['', Validators.required]
+      image: ['null']
     });
+  }
+
+  // public saveMedecin(){
+  //   console.log(this.medecinForm.value);
+  //   }
+
+  ngOnInit(): void {
+
   }
 
   onSubmit() {

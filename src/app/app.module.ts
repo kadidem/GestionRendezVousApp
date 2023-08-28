@@ -19,6 +19,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import {MatDialogModule} from '@angular/material/dialog'
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FullCalendarModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

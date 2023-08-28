@@ -11,13 +11,10 @@ import { DetailsrendezvousComponent } from '../detailsrendezvous/detailsrendezvo
   templateUrl: './calendrierrendezvous.component.html',
   styleUrls: ['./calendrierrendezvous.component.css']
 })
-export class CalendrierrendezvousComponent implements OnInit {
+export class CalendrierrendezvousComponent {
 
   constructor (private dialog: MatDialog){}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
 
   calendarOptions: CalendarOptions = {

@@ -30,8 +30,8 @@ export class AjouterMedecinService {
   return this.listeMedecin;
   }
   
-  supprimerMedecin(medecin : AjouterMedecin) {
-    const ID = this.listeMedecin.findIndex(index => index.id === medecin.id);
+  supprimerMedecin(id : number) {
+    const ID = this.listeMedecin.findIndex(index => index.id === id);
     
     if(ID !== -1 ){
       this.listeMedecin.splice(ID, 1);
