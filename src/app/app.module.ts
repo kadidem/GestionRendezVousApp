@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 import { AjoutermedecinComponent } from './ajoutermedecin/ajoutermedecin.component';
 import { AjouterpatientComponent } from './ajouterpatient/ajouterpatient.component';
 import { ListepatientComponent } from './listepatient/listepatient.component';
@@ -15,8 +17,11 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+// import { FooterComponent } from './footer/footer.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,13 +37,17 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
     AdminaccueilComponent,
     CreateAdminAccountComponent,
     HeaderComponent,
-    FooterComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SlickCarouselModule
+     BrowserModule,
+     BrowserAnimationsModule,
+     AppRoutingModule,
+     SlickCarouselModule,
+     NgbModule,
+    CommonModule,
+     MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

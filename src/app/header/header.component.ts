@@ -11,7 +11,7 @@ export class HeaderComponent {
   }
 
   goToAcceuil() {
-    this.router.navigate(['/', 'Acceuil']);
+    this.router.navigate(['/', '']);
   }
   goToAboutUs() {
     this.router.navigate(['/', 'Apropos']);
