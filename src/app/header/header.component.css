@@ -1,6 +1,6 @@
 .nav {
     top: 0;
-    width: 100%;
+    width: 100vw;
     background-color: #38B198;
     color: #fff;
     padding: 0 16px;
@@ -16,6 +16,9 @@
   }
 ul {
     list-style: none;
+  }
+  ul li{
+    margin-left: -10px;
   }
   /* Style de base pour le bouton */
 button {

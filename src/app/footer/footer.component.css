@@ -1,9 +1,10 @@
 .footer{
     background-color: #38B198;
-   margin-top: 40px; 
+   margin-top: 65vh; 
 }
 .foot{
     margin-left: 5px;
+
     display: grid;
     grid-template-columns: 2fr 1fr;
 }

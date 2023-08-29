@@ -1,1 +1,42 @@
-<p>ajoutermedecin works!</p>
+
+
+
+
+<div  mat-dialog-content class="mat-typography">
+<div class="add-doctor-container" >
+  <h2 class="title" >{{ isEditMode ? 'Modifier un médecin' : 'Ajouter un médecin' }}</h2> <br>
+  <div class="trait"> </div>
+
+  <div class="form-container">
+    <div class="image-preview">
+      <img [src]="imagePreview" alt="Aperçu de l'image">
+
+    </div>
+    <h4 class="title" style="margin-left: 290px; cursor: pointer; margin-top: 15px;" (click)="triggerImageUpload()">
+      Charger l'image</h4>
+    <input type="file" #imageInput style="display: none;" formControlName="image" (change)="handleImageChange($event)" accept="image/*"
+      class="input-field">
+
+
+    <form [formGroup]="medecinForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+
+        <input type="text" placeholder="Nom" formControlName="nom" class="input-field">
+        <input type="text" placeholder="Prénom" formControlName="prenom" class="input-field">
+
+        <input type="text" placeholder="Email" formControlName="email" class="input-field">
+        <input type="tel" placeholder="Téléphone" formControlName="telephone" class="input-field">
+
+        <input type="text" placeholder="Spécialité" formControlName="specialite" class="input-field">
+      </div>
+      <button type="submit" [disabled]="!medecinForm.valid"  mat-raised-button type="button" class="add-button">
+        <i class="fa fa-plus"> </i>
+        {{ isEditMode ? 'Modifier' : 'Ajouter' }}</button>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close class="add-button" style="margin-left:-20px; margin-top: -85px;">Annuler</button>
+    </div>
+  </div>
+</div>
+
+</div>

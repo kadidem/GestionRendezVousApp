@@ -1,1 +1,15 @@
-<p>calendrierrendezvous works!</p>
+<button class="btn" (click)="openDialog()">Créer rendez-vous</button>
+<div class="calendrier" style="width: 700px; height:700px; margin-top: 30px; margin-left: 70vh; color: #38B198;">
+    <full-calendar (click)="openDetails()" [options]="calendarOptions"></full-calendar>
+</div>
+
+
+
+
+<!-- lien 
+
+  "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/@fullcalendar/core/main.min.css",
+              "node_modules/@fullcalendar/daygrid/main.min.css",
+              "node_modules/@fullcalendar/timegrid/main.min.css",
+-->

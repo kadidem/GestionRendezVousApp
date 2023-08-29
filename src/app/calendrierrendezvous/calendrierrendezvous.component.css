@@ -1,0 +1,18 @@
+.fc-prev-button>.fc-button>.fc-button-primary{
+    color:#38B198;
+    background-color: #38B198;
+    border-color: #38B198;
+}
+
+.btn{
+    color: #fff !important;
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid #38B198;
+    border-radius: 5px;
+    background-color: #38B198;
+    margin-top: 90px;
+    margin-left: 145vh;
+}

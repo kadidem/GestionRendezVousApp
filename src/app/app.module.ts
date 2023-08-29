@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,37 +19,43 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { HeaderComponent } from './header/header.component';
-// import { FooterComponent } from './footer/footer.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
+import { PatientloginComponent } from './patientlogin/patientlogin.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AjoutermedecinComponent,
-    AjouterpatientComponent,
-    ListepatientComponent,
-    ListemedecinComponent,
-    CalendrierrendezvousComponent,
-    CreationrendezvousComponent,
-    DetailsrendezvousComponent,
-    AdminloginComponent,
-    AdminaccueilComponent,
-    CreateAdminAccountComponent,
-    HeaderComponent,
-    AcceuilComponent,
-    FooterComponent
+     AppComponent,
+     AjoutermedecinComponent,
+     AjouterpatientComponent,
+     ListepatientComponent,
+     ListemedecinComponent,
+     CalendrierrendezvousComponent,
+     CreationrendezvousComponent,
+     DetailsrendezvousComponent,
+     AdminloginComponent,
+     AdminaccueilComponent,
+     CreateAdminAccountComponent,
+     HeaderComponent,
+     AcceuilComponent,
+     FooterComponent,
+     PatientloginComponent,
   ],
   imports: [
-     BrowserModule,
-     BrowserAnimationsModule,
-     AppRoutingModule,
-     SlickCarouselModule,
-     NgbModule,
-    CommonModule,
-     MatDialogModule
+      BrowserModule,
+      BrowserAnimationsModule,
+      AppRoutingModule,
+      SlickCarouselModule,
+      NgbModule,
+      CommonModule,
+      MatDialogModule,
+      FullCalendarModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

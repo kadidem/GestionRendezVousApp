@@ -1,1 +1,56 @@
-<p>listemedecin works!</p>
+ 
+
+
+  <h2 style="margin-left: 5vh;" id="animation-text">Liste des docteurs</h2>
+
+ <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
+
+
+<!-- <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
+
+<app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin>
+</div> -->
+
+
+
+
+  <table width="100%" style="margin-top: 10px;">
+
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Specialité</th>
+        <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let med of medecin">
+          <td> {{med.id}} </td>
+          <td> {{med.nom}}</td>
+          <td> {{med.prenom}} </td>
+        <td> {{med.email}} </td>
+        <td> {{med.telephone}}  </td>
+        <td>  {{med.specialite}} </td>
+        <td>
+          <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
+          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+        </td>
+     </tr>
+
+       
+
+      
+
+</table>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const animationText = document.getElementById("animation-text");
+  
+    setTimeout(function() {
+      animationText.classList.add("hidden");
+    }, 12000);
+  });
+  </script>
