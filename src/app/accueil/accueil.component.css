@@ -1,0 +1,185 @@
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.myslider-container{
+
+  display: flex;
+  height: 600px;
+   align-items: center; 
+  background-color: #38B198;
+
+}
+
+img{
+    height: 600px;
+}
+
+
+
+.myslider-container img{
+  opacity: 0.8;
+}
+.slideshow-container {
+  padding-top: 30px;
+  max-width: 1500px;
+  position: relative;
+  /* margin: auto; */
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: #38B198;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: white;
+  padding: 8px 12px;
+  width: 60%;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+   
+   
+   
+   /* .slider{
+    background-color: #38B198;
+    WIDTH: 50%;
+    overflow: hidden;
+    margin: auto;
+   }
+  .slider .element{
+    display: inline-block;
+  }
+ .slider h2{
+   margin-top:  20%;
+    font-size: 30px;
+    margin-left: 50px;
+    color: white;
+  }
+  .slider img{
+    margin-top: 30px;
+    margin-left: 50px;
+    opacity: 0.7;
+    width: 500px;
+    height: auto;
+  } */
+.apropos{
+margin-left: 43%;
+margin-right: 43%;
+}
+.apropos p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.apropos hr{
+    height: 4px; 
+  background-color: #38B198; 
+  border: none;
+}
+.aproposdenous{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    background-color: #38B198;
+    margin-right: 20px;
+    margin-left: 20px;
+ 
+}
+.aproposdenous img{
+  width: 400px;
+
+}
+.aproposdenous h3{
+  margin-top: 80px;
+    color:white;
+
+    margin-right: 100px;
+}
+.doc{
+    background-color: #38B198;
+    width: 400px;
+    height: 250px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+.doc img{
+    width: 400px;
+    height: 180px;
+}
+.docteurli{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}

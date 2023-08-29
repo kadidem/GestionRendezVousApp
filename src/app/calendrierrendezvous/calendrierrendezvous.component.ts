@@ -17,13 +17,15 @@ export class CalendrierrendezvousComponent {
 
 
 
+
+
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
     weekends: true,
     events: [
       {color:'#38B198', title:"hi"},
-      { title: 'Meeting', start: new Date() }
+      { title: 'Occupé', start: new Date() }
     ]
   };
 

@@ -9,11 +9,11 @@ import { AjoutermedecinComponent } from './ajoutermedecin/ajoutermedecin.compone
 import { CalendrierrendezvousComponent } from './calendrierrendezvous/calendrierrendezvous.component';
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
 import { CreationrendezvousComponent } from './creationrendezvous/creationrendezvous.component';
+import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'admin-login', component: AdminloginComponent},
   { path: 'admin-accueil', component: AdminaccueilComponent },
-  { path: 'login', component: AdminloginComponent},
   { path: 'create-admin', component: CreateAdminAccountComponent },
   { path: 'liste-doc', component: ListemedecinComponent },
   { path: 'accueil', component: AccueilComponent },
@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: 'liste-rdv', component: CalendrierrendezvousComponent },
   { path: 'details-rdv', component: DetailsrendezvousComponent },
   { path: 'rdv', component: CreationrendezvousComponent },
+  {path: 'login', component: AdminloginComponent},
+  {path: 'listes-rdv', component: ListeRendezVousComponent}
   
  
 ];

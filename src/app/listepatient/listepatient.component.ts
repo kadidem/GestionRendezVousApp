@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-listepatient',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./listepatient.component.css']
 })
 export class ListepatientComponent {
+
+
 
 }

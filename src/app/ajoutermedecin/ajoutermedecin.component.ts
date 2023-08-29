@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AddDoctorService } from '../services/add-doctor.service';
 import { MAT_DIALOG_DATA ,MatDialogRef } from '@angular/material/dialog';
 import { Medecin } from '../models/medecin.js';
+import Swal from 'sweetalert2';
 
 
 
@@ -56,6 +57,11 @@ export class AjoutermedecinComponent {
       const newMedecin = this.medecinForm.value as Medecin;
       this.medecinService.ajoutMedecin(newMedecin);
       console.warn(newMedecin)
+      Swal.fire(
+        'Ajouter avec succès!',
+        'Les données sont enrégistrés avec succès!',
+        'success'
+      )
       this.medecinForm.reset();
     }
   }

@@ -1,6 +1,6 @@
 
 
-<div class="add-doctor-container" style="margin-left: 50px; margin-top: 40px;" [@slideInOut]>
+<div class="add-doctor-container" style="margin-left: 50px; margin-top: 40px;">
     <h2  (click)="openDialog()" class="title" >Prendre rendez - vous</h2> <br>
     <div class="trait">  </div>
   
@@ -10,23 +10,22 @@
       <!-- <h4 class="title" style="margin-left:290px; margin-top:15px;"  (change)="handleImageChange($event)" accept="image/*" >Charger l'image</h4> -->
       <!-- <input type="file" style="display:noe; margin-left:320px; margin-top:-50px; width:30px;" (change)="handleImageChange($event)" accept="image/*" class="input-field"> -->
      
-      <form>
+      <form  [formGroup]="rdvForm" (ngSubmit)="onSubmit()">
         <div class="input-group">
             <label for="" > Docteur </label>
-            <select name="" id="" class="input-field" style="margin-top: 5px;">
-                <option value="" ></option>
-                <option value="" >Bah</option>
-                <option value="">Traoré</option>
+            <select  id="" class="input-field" formControlName="doc" style="margin-top: 5px;">
+              <option >Sectionner un medecin</option>
+              <option *ngFor="let doc of medecinsSelect" [ngValue]="doc">{{ doc.prenom }}   {{doc.nom}}</option>
             </select> <br>
             <label for="" > Date </label>
-            <input type="date" placeholder="Date" class="input-field">
+            <input type="date" formControlName="date"  class="input-field">
             <label for="" > Heure </label>
-            <input type="time"  placeholder="Heure" class="input-field">
+            <input type="time"  formControlName="time"  class="input-field">
             <label for="" > Motif </label>
-          <input type="text"  placeholder="Motif" class="input-field">
+          <input type="text" formControlName="motif"  placeholder="Motif" class="input-field">
 
         </div>
-        <button type="button" class="add-button" >
+        <button type="submit" (click)="confirm()" type="button" class="add-button" >
              <i class="fa fa-check"> </i> 
              Confirmer</button>
       </form>

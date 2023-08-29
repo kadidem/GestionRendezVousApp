@@ -73,6 +73,10 @@ a{
     left: 0;
     overflow: hidden;
   }
+  
+  a{
+    cursor: pointer;
+  }
   .nav > .nav-list > li {
     width: 100%;
     margin-top: 1.5rem;
