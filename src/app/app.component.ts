@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -9,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Gestion Rendez Vous App';
+
+
+  isLoginPage = false;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.url.subscribe(urlSegments => {
+      this.isLoginPage = urlSegments[0]?.path === '/login';
+    });
+  }
+
+
 }
