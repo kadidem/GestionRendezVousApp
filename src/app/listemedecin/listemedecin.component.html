@@ -27,8 +27,7 @@
         </tr>
 
         <tr *ngFor="let med of medecin | paginate: { itemsPerPage: 3, currentPage: p }">
-          <td> </td>
-          <!-- <td> {{med.id}} </td> -->
+          <td> {{med.id}} </td>
           <td> {{med.nom}}</td>
           <td> {{med.prenom}} </td>
         <td> {{med.email}} </td>

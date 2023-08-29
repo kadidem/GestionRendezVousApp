@@ -20,6 +20,9 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import {MatDialogModule} from '@angular/material/dialog'
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableDataSource} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FullCalendarModule,
     MatDialogModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule,
+    // MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]
