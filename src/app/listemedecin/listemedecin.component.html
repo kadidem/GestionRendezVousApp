@@ -23,6 +23,7 @@
         <th>Email</th>
         <th>Téléphone</th>
         <th>Specialité</th>
+        <th>Image</th>
         <th>Action</th>
         </tr>
 
@@ -33,9 +34,11 @@
         <td> {{med.email}} </td>
         <td> {{med.telephone}}  </td>
         <td>  {{med.specialite}} </td>
+        <td>  {{med.image}} </td>
+        
         <td>
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+          <a (click)="supprimerMedecin(med)"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
 
      </tr>

@@ -34,12 +34,13 @@ export class AjoutermedecinComponent {
   constructor(private formBuilder: FormBuilder, private medecinService: AddDoctorService) { 
 
     this.medecinForm = this.formBuilder.group({
+      id:['null'],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', Validators.required],
       telephone: ['', Validators.required],
       specialite: ['', Validators.required],
-      image: ['null']
+      image: ['']
     });
   }
 

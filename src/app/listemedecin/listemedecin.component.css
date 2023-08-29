@@ -85,6 +85,12 @@ tr:hover td {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+
+a{
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
