@@ -7,6 +7,6 @@ export class Medecin {
         public email: string,
         public telephone: string,
         public specialite: string,
-        public image : String,
+        publFormGroupimage : String,
     ){};
 }

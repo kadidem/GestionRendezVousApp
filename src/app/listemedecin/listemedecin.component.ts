@@ -36,12 +36,9 @@ export class ListemedecinComponent implements OnInit {
   }
 
 
-  supprimerMedecin(medecin: Medecin){
-     this.medecinService.supprimerMedecin(medecin.id);
+  supprimerMedecin(medecins: Medecin){
+     this.medecinService.supprimerMedecin(medecins.id);
   }
-
-
- 
 
       isFormVisible = false;
       isEditMode=false;

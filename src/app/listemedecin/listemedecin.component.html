@@ -1,4 +1,4 @@
-<!--  
+ 
 
 
   <h2 style="margin-left: 5vh;" id="animation-text">Liste des docteurs</h2>
@@ -9,11 +9,11 @@
  <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
 
 <app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin>
-</div> -->
+</div> 
 
 
 
-<!-- 
+
   <table width="100%" style="margin-top: 10px;">
 
     <tr>
@@ -23,6 +23,7 @@
         <th>Email</th>
         <th>Téléphone</th>
         <th>Specialité</th>
+        <th>Image</th>
         <th>Action</th>
         </tr>
 
@@ -33,9 +34,11 @@
         <td> {{med.email}} </td>
         <td> {{med.telephone}}  </td>
         <td>  {{med.specialite}} </td>
+        <td>  {{med.image}} </td>
+        
         <td>
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-          <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
+          <a (click)="supprimerMedecin(med)"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
 
      </tr>
@@ -53,4 +56,4 @@
       animationText.classList.add("hidden");
     }, 12000);
   });
-  </script> --> 
+  </script> 

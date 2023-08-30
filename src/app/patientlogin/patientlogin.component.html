@@ -5,16 +5,19 @@
     <div id="right">
         <div class="haut">
       <h1 id="login">Créer un compte</h1><br>
-      <form action="">
-      <input type="text" id="text" class="client-info">
-      <label for="text">Nom d'utilisateur</label>
-      <input type="email" id="email" class="client-info">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <input formControlName="name" type="text" id="nom" class="client-info">
+      <label for="nom">Nom d'utilisateur</label>
+      <input formControlName="email" type="email" id="email" class="client-info">
       <label for="email">Email</label>
-      <input type="number" id="number" class="client-info">
-      <label for="number">Numero</label>
-      <input type="password" id="password" class="client-info">
+      <input  formControlName="telephone" type="number" id="telephone" class="client-info">
+      <label for="telephone">Numero</label>
+      <input formControlName="password" type="password" id="password" class="client-info">
       <label for="password">Mot de passe</label>
       <input type="submit" id="submit" class="client-info" style="cursor: pointer;" value="S'enregistrer">
+      <div *ngIf="registrationError" class="error-message">
+        {{ registrationError }}
+      </div>
     </form>
       <p  style="color:black ; margin-left: 110px;" > Vous avez  deja un  compte ? <a routerLink="/app-ajouterpatient" style="color: #38B198; cursor: pointer;">  Connectez vous </a> </p>
       <!-- <p  style="color:black; margin-left: 120px;"> Vous avez un compte admin ? <a   routerLink="/login" style="color: #38B198; cursor: pointer; " >Se connecter</a> </p> -->
@@ -22,7 +25,24 @@
     </div>
     </div>
   </div>
-
+  <!-- <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <input formControlName="email" placeholder="Email">
+    <div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)">
+      <div *ngIf="registerForm.controls.email.errors.required">L'e-mail est requis.</div>
+      <div *ngIf="registerForm.controls.email.errors.email">L'e-mail n'est pas valide.</div>
+    </div>
+    
+    <input formControlName="password" placeholder="Password" type="password">
+    <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">
+      <div *ngIf="registerForm.controls.password.errors.required">Le mot de passe est requis.</div>
+      <div *ngIf="registerForm.controls.password.errors.minlength">Le mot de passe doit avoir au moins 6 caractères.</div>
+    </div>
+    
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    <div *ngIf="registrationError" class="error-message">
+      {{ registrationError }}
+    </div> -->
+  <!-- </form> -->
 <!-- <router-outlet></router-outlet> -->
 
   

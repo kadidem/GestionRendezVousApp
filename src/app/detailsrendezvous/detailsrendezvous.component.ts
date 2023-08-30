@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-detailsrendezvous',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./detailsrendezvous.component.css']
 })
 export class DetailsrendezvousComponent {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public appointmentDetails: any) {}
+
+  
 
 }

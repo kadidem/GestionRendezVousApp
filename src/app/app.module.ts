@@ -4,9 +4,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,13 +24,12 @@ import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
 import { HeaderComponent } from './header/header.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
 
 
 @NgModule({
@@ -38,7 +37,6 @@ import { PatientloginComponent } from './patientlogin/patientlogin.component';
      AppComponent,
      AjoutermedecinComponent,
      AjouterpatientComponent,
-     ListepatientComponent,
      ListemedecinComponent,
      CalendrierrendezvousComponent,
      CreationrendezvousComponent,
@@ -47,9 +45,12 @@ import { PatientloginComponent } from './patientlogin/patientlogin.component';
      AdminaccueilComponent,
      CreateAdminAccountComponent,
      HeaderComponent,
-     AcceuilComponent,
+     AcceuilComponent, 
      FooterComponent,
      PatientloginComponent,
+     AdminloginComponent,
+    AdminaccueilComponent,
+    ListeRendezVousComponent,
   ],
   imports: [
       BrowserModule,
@@ -61,9 +62,10 @@ import { PatientloginComponent } from './patientlogin/patientlogin.component';
       MatDialogModule,
       FullCalendarModule,
       ReactiveFormsModule,
-    // NgxPaginationModule,
+     NgxPaginationModule,
      HttpClientModule,
-     //MatTableDataSource
+     
+    // MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]

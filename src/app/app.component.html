@@ -1,21 +1,58 @@
-<div class="Acceuil">
-    <div class="navbar">
-      <!-- <app-header> </app-header> -->
- <!-- <app-acceuil></app-acceuil> -->
- <!-- <app-ajouterpatient></app-ajouterpatient> -->
- </div>
- <div class="main">
+<div class="app-container">
+  <nav class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        Logo
+      </div>
+    </div>
+    <!-- <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div> -->
+    
+    <ul class="nav-list">
+      <li><a routerLink="/accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Accueil</a></li>
+      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Rendez-vous</a></li>
+      <li><a routerLink="/loginpatient" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Se connecter</a></li>
+      <!-- <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Login</a></i> -->
+      
+    </ul>
+  </nav>
 
-  
-   <main>
-   <router-outlet></router-outlet>
+  <main class="content">
+    <router-outlet></router-outlet>
   </main>
-</div>
-<div class="footer">
-  <!-- <app-footer></app-footer> -->
-</div>
+
+  <footer class="footer">
+    <div class="footer">
+      <div class="foot">
+      <div class="contact">
+          <h3>Contact</h3>
+          <h4><i class="fa-duotone fa-phone"></i> Appelé le : 62356569 <br>exemple@gmail.com <br>Hamdalaye ACI</h4>
+      </div>
+      <div class="lien">
+          <h4>Liens utile</h4>
+          <a href="src/app/appcreationrendezvous">Rendez-vous</a><br>
+          <a href="src/appcalendrierrendezvous">Calendrier</a>
+      </div>
+      </div>
+      <p style="text-align: center;color: white;">@ 2023 Tous droits reservés</p>
+  </div>
+  
+  </footer>
 </div>
 
+
+
+   
+
+
+
+ 
 <!-- <app-adminlogin></app-adminlogin> -->
 
 
@@ -37,10 +74,10 @@
     </div>
     
     <ul class="nav-list">
-      <li><a routerLink="/admin-accueil" style="font-size: 20px; font-weight: bold;">Accueil</a></li>
-      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold;">Rendez-vous</a></li>
-      <li><a routerLink="/liste-doc" routerLinkActive="active" style="font-size: 20px; font-weight: bold;" >Liste medecin</a></li>
-      <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer;">Logout</a></i>
+      <li><a routerLink="/admin-accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Accueil</a></li>
+      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Rendez-vous</a></li>
+      <li><a routerLink="/liste-doc" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Liste medecin</a></li>
+      <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Logout</a></i>
     </ul>
   </nav>
 

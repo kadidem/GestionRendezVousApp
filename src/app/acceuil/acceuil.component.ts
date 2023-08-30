@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-acceuil',
@@ -23,6 +24,11 @@ constructor(){
 }
   ngOnInit(): void {
     this.showSlides(this.slideIndex);
+    const obs$ = interval(7000);
+    obs$.subscribe((d) =>{
+      console.log(d);
+        this.plusSlides(1);
+    })
   }
 plusSlides(n:number) {
   this.showSlides(this.slideIndex += n);
