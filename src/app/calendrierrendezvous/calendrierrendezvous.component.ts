@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import frLocale from '@fullcalendar/core/locales/fr';
 import { MatDialog } from '@angular/material/dialog';
 import { CreationrendezvousComponent } from '../creationrendezvous/creationrendezvous.component';
 import { DetailsrendezvousComponent } from '../detailsrendezvous/detailsrendezvous.component';
+import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+// import { View , EventSettingModel } from '@syncfusion/ej2-angular-calendars';
+// import { ViewApi } from '@fullcalendar/core';
 
 
 @Component({
@@ -19,16 +23,22 @@ export class CalendrierrendezvousComponent {
 
 
 
-  calendarOptions: CalendarOptions = {
+  calendarOptions: any = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
     weekends: true,
-    events: [
+    locale: frLocale,
+        events: [
       {color:'#38B198', title:"hi"},
       { title: 'Occupé', start: new Date() }
-    ]
+    ],
+   
   };
 
+ 
+
+
+  
 
   // afficher le calendar pop up 
   openDialog() {

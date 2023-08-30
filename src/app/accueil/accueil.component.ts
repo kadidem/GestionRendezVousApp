@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -20,9 +21,8 @@ sliderConfig = {
 slideIndex:number = 1;
 
 
-constructor(){
- 
-}
+constructor(private router: Router) { }
+
   ngOnInit(): void {
     this.showSlides(this.slideIndex);
   }

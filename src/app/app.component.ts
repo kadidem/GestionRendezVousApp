@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -11,14 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent {
   title = 'Gestion Rendez Vous App';
 
+  constructor(private router: Router) { }
 
-  isLoginPage = false;
 
-  constructor(private route: ActivatedRoute) {
-    this.route.url.subscribe(urlSegments => {
-      this.isLoginPage = urlSegments[0]?.path === '/login';
-    });
-  }
+  // isLoginPage = true;
+
+  // constructor(private route: ActivatedRoute) {
+  //   this.route.url.subscribe(urlSegments => {
+  //     this.isLoginPage = urlSegments[0]?.path === '/admin-accueil';
+  //   });
+  // }
 
 
 }

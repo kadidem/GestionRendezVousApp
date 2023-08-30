@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { AjoutermedecinComponent } from '../ajoutermedecin/ajoutermedecin.component';
 import { AddDoctorService } from '../services/add-doctor.service';
 import { Medecin } from '../models/medecin.js';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -38,21 +39,39 @@ export class ListemedecinComponent implements OnInit {
 
   supprimerMedecin(medecins: Medecin){
      this.medecinService.supprimerMedecin(medecins.id);
+     Swal.fire({
+      title: 'Etes vous sûr ?',
+      text: "Ces données ne pourront plus être recuperer!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#38B198',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, je veux supprimer!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Supprimer!',
+          'Suppression avec succès.',
+          'success'
+        )
+      }
+    })
   }
 
 
  
 
       isFormVisible = false;
+
       isEditMode=false;
 
-
-      
         toggleFormWithDelay() {
           setTimeout(() => {
             this.isFormVisible = !this.isFormVisible;
           }, 1000); // Delay of 1 second
         }
+
+
         toggleForm(isEditMode: boolean) {
           this.isFormVisible = true;
           this.isEditMode = isEditMode;

@@ -21,8 +21,10 @@ import {MatDialogModule} from '@angular/material/dialog'
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableDataSource} from '@angular/material/table';
 import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
+import { HeaderComponent } from './header/header.component';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+// import * as moment from 'moment';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.
     AdminaccueilComponent,
     AccueilComponent,
     ListeRendezVousComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,8 @@ import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.
     ReactiveFormsModule,
     NgxPaginationModule,
     HttpClientModule,
+    ScheduleModule, 
+    RecurrenceEditorModule,
     // MatTableDataSource
   ],
   providers: [],

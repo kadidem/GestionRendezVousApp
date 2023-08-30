@@ -1,37 +1,69 @@
 
 
-
 <div class="app-container">
-  <nav class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-      <div class="nav-title">
-        Logo
+    <nav class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          Cherifla
+        </div>
       </div>
-    </div>
-    <div class="nav-btn">
-      <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div>
-    
-    <ul class="nav-list">
-      <li><a routerLink="/admin-accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Accueil</a></li>
-      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Rendez-vous</a></li>
-      <li><a routerLink="/liste-doc" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Liste medecin</a></li>
-      <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Logout</a></i>
-    </ul>
-  </nav>
-
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      
+      <ul class="nav-list">
+        <li><a routerLink="/admin-accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Accueil</a></li>
+        <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Rendez-vous</a></li>
+        <li><a routerLink="/liste-doc" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Liste medecin</a></li>
+        <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer; color: #fff;">Se connecter</a></i>
+      </ul>
+    </nav>
+  
   <main class="content">
     <router-outlet></router-outlet>
   </main>
 
-  <footer class="footer">
-  </footer>
-</div>
+
+     
+  
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Rue Example, Ville</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <p>Numéro de téléphone</p>
+        </div>
+        <div class="contact-item">
+          <i class="far fa-envelope"></i>
+          <p>email@example.com</p>
+        </div>
+      </div>
+      <div class="useful-links">
+        <h2>Lis liens</h2>
+        <ul>
+          <li><a routerLink="liste-rdv">Calendrier</a></li>
+          <li><a routerLink="/rdv">Prendre rendez vous</a></li>
+          <li><a href="#">Lien 3</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2023</p>
+  </div>
+</footer> -->
+
+
+
+
 
 
 

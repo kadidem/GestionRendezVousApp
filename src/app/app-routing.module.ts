@@ -1,6 +1,5 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import { ListemedecinComponent } from './listemedecin/listemedecin.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CreateAdminAccountComponent } from './create-admin-account/create-admin-account.component';
@@ -10,10 +9,12 @@ import { CalendrierrendezvousComponent } from './calendrierrendezvous/calendrier
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
 import { CreationrendezvousComponent } from './creationrendezvous/creationrendezvous.component';
 import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
+import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'admin-login', component: AdminloginComponent},
-  { path: 'admin-accueil', component: AdminaccueilComponent },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'accueil', component: AccueilComponent },  
+  { path: 'admin-accueil', component: AdminaccueilComponent},
   { path: 'create-admin', component: CreateAdminAccountComponent },
   { path: 'liste-doc', component: ListemedecinComponent },
   { path: 'accueil', component: AccueilComponent },
