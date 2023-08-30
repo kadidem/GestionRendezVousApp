@@ -12,24 +12,27 @@
       <img [src]="imagePreview" alt="Aperçu de l'image">
 
     </div>
-    <h4 class="title" style="margin-left: 290px; cursor: pointer; margin-top: 15px;" (click)="triggerImageUpload()">
+    <form [formGroup]="medecinForm" (ngSubmit)="onSubmit()" >
+
+    <h4 class="title" style="margin-left: 290px; cursor: pointer; margin-top: 20px;" (click)="triggerImageUpload()">
       Charger l'image</h4>
     <input type="file" #imageInput style="display: none;" formControlName="image" (change)="handleImageChange($event)" accept="image/*"
       class="input-field">
+      <!-- <p *ngIf="selectedFile">{{ selectedFile.name }}</p> -->
 
 
-    <form [formGroup]="medecinForm" (ngSubmit)="onSubmit()">
       <div class="input-group">
 
-        <input type="text" placeholder="Nom" formControlName="nom" class="input-field">
-        <input type="text" placeholder="Prénom" formControlName="prenom" class="input-field">
+        <input type="text" formControlName="nom" placeholder="Nom"  class="input-field">
+        <input type="text" formControlName="prenom" placeholder="Prénom"  class="input-field">
 
-        <input type="text" placeholder="Email" formControlName="email" class="input-field">
-        <input type="tel" placeholder="Téléphone" formControlName="telephone" class="input-field">
+        <input type="text" formControlName="email" placeholder="Email"  class="input-field">
+        <input type="tel" formControlName="telephone" placeholder="Téléphone"  class="input-field">
 
-        <input type="text" placeholder="Spécialité" formControlName="specialite" class="input-field">
+        <input type="text" formControlName="specialite" placeholder="Spécialité"   class="input-field">
       </div>
-      <button type="submit" [disabled]="!medecinForm.valid"  mat-raised-button type="button" class="add-button">
+      
+      <button type="submit"  class="add-button">
         <i class="fa fa-plus"> </i>
         {{ isEditMode ? 'Modifier' : 'Ajouter' }}</button>
     </form>
@@ -40,3 +43,7 @@
 </div>
 
 </div>
+
+<!-- <pre>
+  {{medecinForm.value | json}}
+</pre> -->

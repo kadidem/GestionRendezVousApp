@@ -1,7 +1,10 @@
-import { Component , ViewChild, ElementRef, EventEmitter, Output} from '@angular/core';
-import { AjouterMedecinService } from '../services/ajouter-medecin.service';
+import { Component , ViewChild, ElementRef, EventEmitter, Output, Inject} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AjouterMedecin } from '../models/ajouter-medecin';
+import { AddDoctorService } from '../services/add-doctor.service';
+import { MAT_DIALOG_DATA ,MatDialogRef } from '@angular/material/dialog';
+import { Medecin } from '../models/medecin.js';
+
+
 
 
 
@@ -24,24 +27,32 @@ export class AjoutermedecinComponent {
   // @Output() formSubmitted = new EventEmitter<void>()
 
 
-  medecinForm !: FormGroup;
-  constructor(private formBuilder: FormBuilder, private medecinService: AjouterMedecinService) { 
+  //  selectedFile: File | null = null;
+
+
+  medecinForm! : FormGroup;
+  constructor(private formBuilder: FormBuilder, private medecinService: AddDoctorService) { 
 
     this.medecinForm = this.formBuilder.group({
-      id: [null],
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       email: ['', Validators.required],
       telephone: ['', Validators.required],
       specialite: ['', Validators.required],
-      image: ['', Validators.required]
+      image: ['null']
     });
+  }
+
+  
+
+  ngOnInit(): void {
+   
   }
 
   onSubmit() {
 
     if (this.medecinForm.valid) {
-      const newMedecin = this.medecinForm.value as AjouterMedecin;
+      const newMedecin = this.medecinForm.value as Medecin;
       this.medecinService.ajoutMedecin(newMedecin);
       console.warn(newMedecin)
       this.medecinForm.reset();
@@ -50,7 +61,8 @@ export class AjoutermedecinComponent {
       
   deleteMedecin(){
     this.medecinService.supprimerMedecin(this.medecinForm.value.id);
-  }
+  }   
+
         toggleFormWithDelay() {
           setTimeout(() => {
             this.isFormVisible = !this.isFormVisible;

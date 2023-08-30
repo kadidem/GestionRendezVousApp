@@ -2,8 +2,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AjoutermedecinComponent } from '../ajoutermedecin/ajoutermedecin.component';
-import { AjouterMedecinService } from '../services/ajouter-medecin.service';
-import { AjouterMedecin } from '../models/ajouter-medecin';
+import { AddDoctorService } from '../services/add-doctor.service';
+import { Medecin } from '../models/medecin.js';
 
 
 @Component({
@@ -14,16 +14,17 @@ import { AjouterMedecin } from '../models/ajouter-medecin';
 })
 export class ListemedecinComponent implements OnInit {
 
-  constructor( private medecinService: AjouterMedecinService,  private dialog: MatDialog) {}
 
-  
+  constructor(   private dialog: MatDialog, private medecinService : AddDoctorService) {}
+
   medecin: any[] = [];
   m: number = 1;
+  p: number =1;
 
 
   ngOnInit(): void {
     this.medecin = this.medecinService.getMedecin();
-    const storageLocal = localStorage.getItem('saveMedecin');
+    const storageLocal = localStorage.getItem('listeDoc');
     if(storageLocal){
       this.medecin = JSON.parse(storageLocal);
     }
@@ -35,9 +36,12 @@ export class ListemedecinComponent implements OnInit {
   }
 
 
-  supprimerMedecin(medecin: AjouterMedecin){
-     this.medecinService.supprimerMedecin(medecin);
+  supprimerMedecin(medecin: Medecin){
+     this.medecinService.supprimerMedecin(medecin.id);
   }
+
+
+ 
 
       isFormVisible = false;
       isEditMode=false;

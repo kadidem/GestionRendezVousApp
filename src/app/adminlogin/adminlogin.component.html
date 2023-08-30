@@ -7,12 +7,13 @@
         <div class="haut">
 
       <h1 id="login">Admin Login</h1><br>
-      <input type="email" id="email" class="client-info">
+      <form [formGroup]="login" (ngSubmit)="loginData(login)">
+      <input type="email" formControlName="email" id="email" class="client-info">
       <label for="email">Email</label>
-      <input type="password" id="password" class="client-info">
+      <input type="password" formControlName="password" id="password" class="client-info">
       <label for="password">Password</label>
       <input type="submit" id="submit" class="client-info" style="cursor: pointer;"  value="Se connecetr">
-
+    </form>
       <p  style="color:black ; margin-left: 110px;" > Vous n'avez pas de compte ? <a routerLink="/create-admin" style="color: #38B198; cursor: pointer;">  Créer un compte </a> </p>
     </div>
     </div>

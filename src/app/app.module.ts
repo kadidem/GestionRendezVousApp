@@ -4,6 +4,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+//import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableDataSource} from '@angular/material/table';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
+
 
 
 
@@ -55,7 +60,10 @@ import { PatientloginComponent } from './patientlogin/patientlogin.component';
       CommonModule,
       MatDialogModule,
       FullCalendarModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+    // NgxPaginationModule,
+     HttpClientModule,
+     //MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]

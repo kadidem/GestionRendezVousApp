@@ -1,4 +1,4 @@
- 
+<!--  
 
 
   <h2 style="margin-left: 5vh;" id="animation-text">Liste des docteurs</h2>
@@ -6,14 +6,14 @@
  <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
 
 
-<!-- <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
+ <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
 
 <app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin>
 </div> -->
 
 
 
-
+<!-- 
   <table width="100%" style="margin-top: 10px;">
 
     <tr>
@@ -26,7 +26,7 @@
         <th>Action</th>
         </tr>
 
-        <tr *ngFor="let med of medecin">
+        <tr *ngFor="let med of medecin | paginate: { itemsPerPage: 3, currentPage: p }">
           <td> {{med.id}} </td>
           <td> {{med.nom}}</td>
           <td> {{med.prenom}} </td>
@@ -37,13 +37,13 @@
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
           <a href="#"><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
+
      </tr>
 
-       
-
-      
-
 </table>
+
+<pagination-controls style="align-items: center; float: right; color: #38B198;" (pageChange)="p = $event"></pagination-controls>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -53,4 +53,4 @@
       animationText.classList.add("hidden");
     }, 12000);
   });
-  </script>
+  </script> --> 

@@ -26,11 +26,15 @@
             ],
             "styles": [
 <<<<<<< HEAD
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
 =======
             
 >>>>>>> b4de793d3d91bd51142a0eb4e9194d7a4d2859a2
+=======
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+>>>>>>> be363a551359f74d64f6ddbfa2afa78ac7ec6dce
               "src/styles.css"
             ],
             "scripts": []
