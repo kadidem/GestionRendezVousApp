@@ -30,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
+import { ChoixInscriptionComponent } from './choix-inscription/choix-inscription.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.
      AdminloginComponent,
     AdminaccueilComponent,
     ListeRendezVousComponent,
+    ChoixInscriptionComponent,
   ],
   imports: [
       BrowserModule,

@@ -15,9 +15,10 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AjouterpatientComponent } from './ajouterpatient/ajouterpatient.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
 import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
+import { ChoixInscriptionComponent } from './choix-inscription/choix-inscription.component';
 
 const routes: Routes = [
-  { path: '', component: AcceuilComponent },
+  { path: '', component: ChoixInscriptionComponent },
   { path: 'admin-accueil', component: AdminaccueilComponent },
   { path: 'create-admin', component: CreateAdminAccountComponent },
   { path: 'liste-doc', component: ListemedecinComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'liste-rdv', component: CalendrierrendezvousComponent },
   { path: 'details-rdv', component: DetailsrendezvousComponent },
   { path: 'rdv', component: CreationrendezvousComponent },
-  //  { path: 'accueil', component: AcceuilComponent},
+  { path: 'accueil', component: AcceuilComponent},
   {path:'loginpatient',component:AjouterpatientComponent},
   {path:'createpatient',component:PatientloginComponent},
   {path: 'login', component: AdminloginComponent},
