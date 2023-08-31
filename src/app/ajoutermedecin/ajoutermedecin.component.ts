@@ -68,6 +68,7 @@ export class AjoutermedecinComponent {
       
   deleteMedecin(){
     this.medecinService.supprimerMedecin(this.medecinForm.value.id);
+    
   }   
 
         toggleFormWithDelay() {

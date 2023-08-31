@@ -152,7 +152,7 @@ label {
 .haut{
     margin-top: -30px;
 }
-
+/* 
 @media (max-width: 1250px) {
  
   #container {
@@ -171,13 +171,13 @@ label {
     box-shadow: var(--box-shadow);
   }
   
-}
+} */
 input[type="submit"]{
     color: #fff;
     font-size:20px;
 };
 
-@media (max-height: 850px) {
+/* @media (max-height: 850px) {
  
   #container {
     width: 1000px;
@@ -194,4 +194,4 @@ input[type="submit"]{
     font-size: 15px;
   }
   
-}
+} */

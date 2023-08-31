@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD:src/app/acceuil/acceuil.component.ts
 import { interval } from 'rxjs';
+=======
+import { Router } from '@angular/router';
+>>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236:src/app/accueil/accueil.component.ts
 
 @Component({
   selector: 'app-acceuil',
@@ -19,9 +23,8 @@ sliderConfig = {
 slideIndex:number = 1;
 
 
-constructor(){
- 
-}
+constructor(private router: Router) { }
+
   ngOnInit(): void {
     this.showSlides(this.slideIndex);
     const obs$ = interval(7000);

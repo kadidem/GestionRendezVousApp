@@ -29,9 +29,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+<<<<<<< HEAD
 import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
 import { ChoixInscriptionComponent } from './choix-inscription/choix-inscription.component';
 
+=======
+import { HttpClientModule } from '@angular/common/http';
+import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
+import { HeaderComponent } from './header/header.component';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+// import * as moment from 'moment';
+>>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
 
 @NgModule({
   declarations: [
@@ -52,6 +60,7 @@ import { ChoixInscriptionComponent } from './choix-inscription/choix-inscription
      AdminloginComponent,
     AdminaccueilComponent,
     ListeRendezVousComponent,
+<<<<<<< HEAD
     ChoixInscriptionComponent,
   ],
   imports: [
@@ -67,6 +76,21 @@ import { ChoixInscriptionComponent } from './choix-inscription/choix-inscription
      NgxPaginationModule,
      HttpClientModule,
      
+=======
+    HeaderComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FullCalendarModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    HttpClientModule,
+    ScheduleModule, 
+    RecurrenceEditorModule,
+>>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
     // MatTableDataSource
   ],
   providers: [],

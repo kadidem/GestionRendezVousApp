@@ -6,78 +6,150 @@ import { AddAppoitmentService } from '../services/add-appoitment.service';
 import { AddDoctorService } from '../services/add-doctor.service';
 import { CreateAppoitment } from '../models/create-appoitment';
 import Swal from 'sweetalert2';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 import { DialogService } from '../services/dialog.service';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
+
+
 
 
 @Component({
   selector: 'app-creationrendezvous',
   templateUrl: './creationrendezvous.component.html',
-  styleUrls: ['./creationrendezvous.component.css']
+  styleUrls: ['./creationrendezvous.component.css'],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService]
+
 })
 export class CreationrendezvousComponent implements OnInit {
 
   medecinsSelect !: Medecin [] | any[];
 
   rdvForm !: FormGroup;
+  eventForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder , private dialogService : DialogService , private dialog: MatDialog , private medecinService: AddDoctorService ,private rdvService: AddAppoitmentService) {
+  numRecords: number = 0;
 
+  // constructor(private formBuilder: FormBuilder , private dialogService : DialogService , private dialog: MatDialog , private medecinService: AddDoctorService ,private rdvService: AddAppoitmentService) {
+
+  //   this.rdvForm = this.formBuilder.group({
+  //     id:['null'],
+  //     date: ['', Validators.required],
+  //     time: ['', Validators.required],
+  //     doc: ['', Validators.required],
+  //     motif: ['', Validators.required],
+  //   });
+
+  // }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialogService : DialogService,
+    private dialog: MatDialog,
+    private medecinService: AddDoctorService,
+    private rdvService: AddAppoitmentService
+  ) {
     this.rdvForm = this.formBuilder.group({
-      id:['null'],
+      id: ['null'],
       date: ['', Validators.required],
       time: ['', Validators.required],
       doc: ['', Validators.required],
-      motif: ['', Validators.required],
+      motif: ['', Validators.required]
     });
-
   }
+  calendarOptions: any = {
+    events: []
+  };
+
+
+
+  eventSettings: EventSettingsModel = {
+    dataSource: []
+  };
 
   ngOnInit(): void {
     this.medecinsSelect = this.medecinService.getMedecin(); 
   }
 
-  
-  
 
+  // addEvent() {
+  //   const eventData = this.eventForm.value;
+  //   const dateTime = moment(eventData.date + ' ' + eventData.time, 'YYYY-MM-DD HH:mm').toDate();
+
+  //   this.calendarOptions.events.push({
+  //     title: eventData.title,
+  //     start: dateTime,
+  //     color: '#38B198'
+  //   });
+
+  //   this.eventForm.reset();
+  // }
 
   onSubmit() {
 
     if (this.rdvForm.valid) {
       const newAppoitment = this.rdvForm.value as CreateAppoitment;
       this.rdvService.CreateAppoitment(newAppoitment);
-      console.warn(newAppoitment)
+  
+      const event = {
+        Id: this.numRecords + 1,
+        Subject: 'Rendez-vous',
+        StartTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+        EndTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+        IsAllDay: false,
+        EventType: 'time'
+      };
+      
+      this.numRecords++;
+
+    if (this.eventSettings.dataSource instanceof DataManager) {
+      this.eventSettings.dataSource.insert(event);
+    } else if (Array.isArray(this.eventSettings.dataSource)) {
+      this.eventSettings.dataSource.push(event);
+    }
+  
+
+     
+      this.rdvForm.reset();
       Swal.fire(
         'Good job!',
         'You clicked the button!',
         'success'
       )
-      this.rdvForm.reset();
-      
     }
-  }
-  calendarOptions: any = {
-    // Autres options du calendrier
-    events: [] // Tableau pour stocker les événements (rendez-vous)
-  };
 
-  // onSubmit() {
-  //   if (this.rdvForm.valid) {
-  //     const newAppoitment = this.rdvForm.value as CreateAppoitment;
-  //     this.rdvService.CreateAppoitment(newAppoitment);
+    // if (this.rdvForm.valid) {
+    //   const newAppoitment = this.rdvForm.value as CreateAppoitment;
+    //   this.rdvService.CreateAppoitment(newAppoitment);
+    //   console.warn(newAppoitment)
+
+    //   if (this.eventSettings.dataSource) {
+    //     this.eventSettings.dataSource.push({
+    //       Subject: 'Rendez-vous',
+    //       StartTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+    //       EndTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+    //       IsAllDay: false,
+    //       EventType: 'time'
+    //     });
+    //   } else {
+    //     this.eventSettings.dataSource = [{
+    //       Subject: 'Rendez-vous',
+    //       StartTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+    //       EndTime: new Date(newAppoitment.date + ' ' + newAppoitment.time),
+    //       IsAllDay: false,
+    //       EventType: 'time'
+    //     }];
       
-  //     // Ajoutez l'événement au calendrier
-  //     this.calendarOptions.events.push({
-  //       title: 'Rendez-vous',
-  //       start: newAppoitment.date,
-  //       color: '#38B198'
-  //     });
+
       
-  //     this.rdvForm.reset();
-  //   }
-  // }
+     
+      
+  }
+  
+  
+
+
 
   confirm() {
-    // Effectuer des actions de confirmation
     this.dialogService.closeDialog();
   }
 
@@ -99,4 +171,5 @@ export class CreationrendezvousComponent implements OnInit {
       });
     }
 
-}
+
+  }

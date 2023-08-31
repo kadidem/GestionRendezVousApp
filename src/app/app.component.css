@@ -161,6 +161,7 @@ a{
     }
     .nav-list{
 
+<<<<<<< HEAD
     }
     .nav > .nav-btn > label > span {
       display: block;
@@ -220,3 +221,57 @@ a{
       display: grid;
       grid-template-columns: 2fr 1fr;
   }     
+=======
+  .footer {
+    background-color: #38B198;
+    margin-top: 30px;
+    padding: 20px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .contact-info {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .contact-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .contact-item i {
+    margin-right: 10px;
+  }
+  
+  .useful-links ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+  }
+  
+  .useful-links li {
+    margin-bottom: 5px;
+  }
+  
+  .useful-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+       
+>>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236

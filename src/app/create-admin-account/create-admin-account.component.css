@@ -151,7 +151,7 @@ label {
   color: white;
 }
 
-@media (max-width: 1250px) {
+/* @media (max-width: 1250px) {
  
   #container {
     width: 600px;
@@ -168,12 +168,12 @@ label {
     box-shadow: var(--box-shadow);
   }
   
-}
+} */
 input[type="submit"]{
     color: #fff;
     font-size:20px;
 };
-
+/* 
 @media (max-height: 850px) {
  
   #container {
@@ -191,4 +191,4 @@ input[type="submit"]{
     font-size: 15px;
   }
   
-}
+} */
