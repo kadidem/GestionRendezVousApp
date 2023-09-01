@@ -6,10 +6,10 @@
  <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
 
 
-<!-- <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible">
+ <!-- <div class="form-container" (click)="isFormVisible? 'in' : 'void' " *ngIf="isFormVisible"> -->
 
-<app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin>
-</div> -->
+<!-- <app-ajoutermedecin (formSubmitted)="onFormSubmitted()"> </app-ajoutermedecin> -->
+<!-- </div>  -->
 
 
 
@@ -34,7 +34,7 @@
         <td> {{med.email}} </td>
         <td> {{med.telephone}}  </td>
         <td>  {{med.specialite}} </td>
-        <!-- <td>  {{med.image}} </td> -->
+        <!-- <td>  {{med.imagePath}} </td> -->
         
         <td>
           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
@@ -56,4 +56,4 @@
       animationText.classList.add("hidden");
     }, 12000);
   });
-  </script>
+  </script> 

@@ -16,10 +16,8 @@
 
     <h4 class="title" style="margin-left: 290px; cursor: pointer; margin-top: 20px;" (click)="triggerImageUpload()">
       Charger l'image</h4>
-    <input type="file" #imageInput style="display: none;" formControlName="image" (change)="handleImageChange($event)" accept="image/*"
+    <input type="file" #imageInput style="display: none;" formControlName="imagePath" (change)="handleImageChange($event)" accept="image/*"
       class="input-field">
-      <!-- <p *ngIf="selectedFile">{{ selectedFile.name }}</p> -->
-
 
       <div class="input-group">
 
@@ -44,6 +42,3 @@
 
 </div>
 
-<!-- <pre>
-  {{medecinForm.value | json}}
-</pre> -->

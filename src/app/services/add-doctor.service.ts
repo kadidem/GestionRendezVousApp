@@ -12,44 +12,45 @@ export class AddDoctorService {
 
 
 
-  constructor() { }
+  private listeDoc: Medecin[] = [];
+  private idCount: number = 1; // Initialize with 1 or a suitable starting value
 
-  private listeDoc : Medecin [] = [];
+  constructor() {
+    this.loadMedecins();
+  }
 
-  private idCount = 1;
-
-  saveMedecin(){
+  private saveMedecins() {
     localStorage.setItem('listeDoc', JSON.stringify(this.listeDoc));
-    
   }
-  
-  //ajout de repas
-  ajoutMedecin(medecin : Medecin) {
+
+  private loadMedecins() {
+    const data: any = localStorage.getItem('listeDoc');
+    this.listeDoc = JSON.parse(data) || [];
+    this.updateIdCount(); // Calculate the next idCount from the loaded data
+  }
+
+  private updateIdCount() {
+    if (this.listeDoc.length > 0) {
+      this.idCount = Math.max(...this.listeDoc.map(medecin => medecin.id)) + 1;
+    }
+  }
+
+  ajoutMedecin(medecin: Medecin) {
     medecin.id = this.idCount;
-    this.listeDoc.push(medecin);
     this.idCount++;
-    this.saveMedecin();
+    this.listeDoc.push(medecin);
+    this.saveMedecins();
   }
-  
 
-  
   getMedecin() {
-    let data : any = localStorage.getItem('listeDoc');
-    this.listeDoc = JSON.parse(data)|| [];
     return this.listeDoc;
+  }
+
+  supprimerMedecin(id: number) {
+    const index = this.listeDoc.findIndex(medecin => medecin.id === id);
+    if (index !== -1) {
+      this.listeDoc.splice(index, 1);
+      this.saveMedecins();
     }
-    
-    supprimerMedecin(id : number) {
-      const ID = this.listeDoc.findIndex(index => index.id === id);
-      
-      if(ID !== -1 ){
-        this.listeDoc.splice(ID, 1);
-        this.saveMedecin();
-      }
-    }
-
-
-
-
-  
+  }
 }

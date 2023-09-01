@@ -3,6 +3,9 @@ import { CreationrendezvousComponent } from '../creationrendezvous/creationrende
 import { AddAppoitmentService } from '../services/add-appoitment.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAppoitment } from '../models/create-appoitment';
+import { AddDoctorService } from '../services/add-doctor.service';
+import { Medecin } from '../models/medecin.js';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-liste-rendez-vous',
@@ -11,18 +14,20 @@ import { CreateAppoitment } from '../models/create-appoitment';
 })
 export class ListeRendezVousComponent {
 
-  constructor(   private dialog: MatDialog, private addAppoitment : AddAppoitmentService) {}
+  constructor(   private dialog: MatDialog, private addAppoitment : AddAppoitmentService, private medecinService : AddDoctorService) {}
 
-  rdv: any[] = [];
+  rdvForm: any[] = [];
   m: number = 1;
   p: number =1;
+  medcecinListe !: Medecin[];
 
 
   ngOnInit(): void {
-    this.rdv = this.addAppoitment.getAppoitment();
+    this.rdvForm = this.addAppoitment.getAppoitment();
+    this.medcecinListe = this.medecinService.getMedecin();
     const storageLocal = localStorage.getItem('listeRdv');
     if(storageLocal){
-      this.rdv = JSON.parse(storageLocal);
+      this.rdvForm = JSON.parse(storageLocal);
     }
   }
 
@@ -33,7 +38,36 @@ export class ListeRendezVousComponent {
 
 
   supprimerRdv(appoitment: CreateAppoitment){
-     this.addAppoitment.supprimerAppoitment(appoitment.id);
+    Swal.fire({
+      title: 'Etes vous sûr ?',
+      text: "Ces données ne pourront plus être recuperer!",
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText:'Annuler',
+      confirmButtonColor: '#38B198',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, je veux supprimer!',
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Supprimer!',
+          'Suppression avec succès.',
+          'success'
+        )
+        this.addAppoitment.deleteAppoitment(appoitment.id);
+        this.afficherRdv();
+      }
+      else{
+        Swal.fire(
+          'Suppression annulée!',
+          'Cette suppresion a été annulée.',
+          'error'
+        )
+      }
+    })
+    this.afficherRdv();
+
   }
       isFormVisible = false;
       isEditMode=false;
@@ -57,11 +91,11 @@ export class ListeRendezVousComponent {
             dialogRef.afterClosed().subscribe(result => {
               console.log('Cette dialogue a été déjà fermer');
             });
-            dialogRef.afterOpened().subscribe(() => {
-              setTimeout(() => {
-                dialogRef.close(); // Ferme automatiquement la boîte de dialogue après un certain délai
-              }, 5000); // Délai de 3000 millisecondes (3 secondes)
-            });
+            // dialogRef.afterOpened().subscribe(() => {
+            //   setTimeout(() => {
+            //     dialogRef.close(); // Ferme automatiquement la boîte de dialogue après un certain délai
+            //   }, 5000); // Délai de 3000 millisecondes (3 secondes)
+            // });
           }
           
         

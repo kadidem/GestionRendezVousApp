@@ -6,7 +6,9 @@ import { CreateAppoitment } from '../models/create-appoitment.js';
 })
 export class AddAppoitmentService {
 
-  constructor() { }
+  constructor() { 
+    this.loadAppoitment()
+  }
 
 
   private listeRdv : CreateAppoitment [] = [];
@@ -17,12 +19,26 @@ export class AddAppoitmentService {
     localStorage.setItem('listeRdv', JSON.stringify(this.listeRdv));
     
   }
+
+  private updateIdCount() {
+    if (this.listeRdv.length > 0) {
+      this.idCount = Math.max(...this.listeRdv.map(medecin => medecin.id)) + 1;
+    }
+  }
+
+  private loadAppoitment() {
+    const data: any = localStorage.getItem('listeRdv');
+    this.listeRdv = JSON.parse(data) || [];
+    this.updateIdCount(); 
+  }
+
+  
   
   //ajout de repas
   CreateAppoitment(CreateAppoitment : CreateAppoitment) {
     CreateAppoitment.id = this.idCount;
-    this.listeRdv.push(CreateAppoitment);
     this.idCount++;
+    this.listeRdv.push(CreateAppoitment);
     this.saveAppoitment();
   }
   
@@ -34,7 +50,7 @@ export class AddAppoitmentService {
     return this.listeRdv;
     }
     
-    supprimerAppoitment(id : number) {
+    deleteAppoitment(id : number) {
       const ID = this.listeRdv.findIndex(index => index.id === id);
       
       if(ID !== -1 ){

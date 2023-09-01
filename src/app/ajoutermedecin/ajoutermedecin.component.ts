@@ -29,7 +29,7 @@ export class AjoutermedecinComponent {
 
 
   //  selectedFile: File | null = null;
-
+  
 
   medecinForm! : FormGroup;
   constructor(private formBuilder: FormBuilder, private medecinService: AddDoctorService) { 
@@ -48,6 +48,9 @@ export class AjoutermedecinComponent {
   
 
   ngOnInit(): void {
+
+    // this.medecin = this.medecinService.getMedecin();
+    
    
   }
 
@@ -56,6 +59,7 @@ export class AjoutermedecinComponent {
     if (this.medecinForm.valid) {
       const newMedecin = this.medecinForm.value as Medecin;
       this.medecinService.ajoutMedecin(newMedecin);
+      this.medecinService.getMedecin();
       console.warn(newMedecin)
       Swal.fire(
         'Ajouter avec succès!',
@@ -63,11 +67,13 @@ export class AjoutermedecinComponent {
         'success'
       )
       this.medecinForm.reset();
+       
     }
   }
       
   deleteMedecin(){
     this.medecinService.supprimerMedecin(this.medecinForm.value.id);
+    this.medecinService.getMedecin();
     
   }   
 

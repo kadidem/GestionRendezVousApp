@@ -6,6 +6,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreationrendezvousComponent } from '../creationrendezvous/creationrendezvous.component';
 import { DetailsrendezvousComponent } from '../detailsrendezvous/detailsrendezvous.component';
 import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from '../dialog.service';
+import { AddDoctorService } from '../services/add-doctor.service';
+import { AddAppoitmentService } from '../services/add-appoitment.service';
+import { Medecin } from '../models/medecin.js';
 // import { View , EventSettingModel } from '@syncfusion/ej2-angular-calendars';
 // import { ViewApi } from '@fullcalendar/core';
 
@@ -15,10 +20,39 @@ import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
   templateUrl: './calendrierrendezvous.component.html',
   styleUrls: ['./calendrierrendezvous.component.css']
 })
-export class CalendrierrendezvousComponent {
+export class CalendrierrendezvousComponent implements OnInit {
 
-  constructor (private dialog: MatDialog){}
+  medecinsSelect !: Medecin [] | any[];
 
+  rdvForm !: FormGroup;
+  eventForm!: FormGroup;
+
+  numRecords: number = 0;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialogService : DialogService,
+    private dialog: MatDialog,
+    private medecinService: AddDoctorService,
+    private rdvService: AddAppoitmentService
+  ) {
+    this.rdvForm = this.formBuilder.group({
+      id: ['null'],
+      date: ['', Validators.required],
+      time: ['', Validators.required],
+      doc: ['', Validators.required],
+      motif: ['', Validators.required]
+    });
+  }
+
+
+  eventSettings: EventSettingsModel = {
+    dataSource: []
+  };
+
+  ngOnInit(): void {
+    this.medecinsSelect = this.medecinService.getMedecin(); 
+  }
 
 
 

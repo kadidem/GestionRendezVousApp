@@ -28,7 +28,9 @@ export class ListemedecinComponent implements OnInit {
     const storageLocal = localStorage.getItem('listeDoc');
     if(storageLocal){
       this.medecin = JSON.parse(storageLocal);
+    
     }
+
   }
 
   afficherMedecin(){
@@ -38,15 +40,17 @@ export class ListemedecinComponent implements OnInit {
 
 
   supprimerMedecin(medecins: Medecin){
-     this.medecinService.supprimerMedecin(medecins.id);
+
      Swal.fire({
       title: 'Etes vous sûr ?',
       text: "Ces données ne pourront plus être recuperer!",
       icon: 'warning',
       showCancelButton: true,
+      cancelButtonText:'Annuler',
       confirmButtonColor: '#38B198',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Oui, je veux supprimer!'
+      confirmButtonText: 'Oui, je veux supprimer!',
+      
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
@@ -54,12 +58,20 @@ export class ListemedecinComponent implements OnInit {
           'Suppression avec succès.',
           'success'
         )
+        this.medecinService.supprimerMedecin(medecins.id);
+        this.afficherMedecin();
+      }
+      else{
+        Swal.fire(
+          'Suppression annulée!',
+          'Cette suppresion a été annulée.',
+          'error'
+        )
       }
     })
+    this.afficherMedecin();
+
   }
-
-
- 
 
       isFormVisible = false;
 
@@ -88,15 +100,10 @@ export class ListemedecinComponent implements OnInit {
             });
           }
           
-        
-
-
-        
-        
-        
-  onFormSubmitted() {
-    this.isFormVisible = false;
-  }
+    
+  // onFormSubmitted() {
+  //   this.isFormVisible = false;
+  // }
         
 }
 

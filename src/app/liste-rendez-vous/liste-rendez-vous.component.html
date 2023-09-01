@@ -28,15 +28,16 @@
         <th>Action</th>
         </tr>
 
-        <tr *ngFor="let ren of rdv">
+        <tr *ngFor="let ren of rdvForm">
+          <td> {{ren.id}}  </td>
           <td> {{ren.date}}  </td>
-          <td> {{ren.doc}} </td>
+          <td> {{ren.doc.nom}} </td>
           <td> {{ren.time}}</td>
         <td> {{ren.motif}} </td>
         
         <td>
           <a ><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-          <a ><i class="fas fa-trash" style="color: red;" > </i></a>
+          <a (click)="supprimerRdv(ren)" ><i class="fas fa-trash" style="color: red;" > </i></a>
         </td>
 
      </tr>

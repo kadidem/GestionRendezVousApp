@@ -103,3 +103,43 @@
   
   
          
+.nav {
+    top: 0;
+    width: 100vw;
+    background-color: #38B198;
+    color: #fff;
+    padding: 0 16px;
+    align-items: center;
+    height: 56px;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ; /* Exemple de colonnes */
+    /* grid-template-rows: auto 1fr auto; Exemple de lignes 
+    grid-gap: 1px;  Espacement entre les éléments */
+    /* display: flex;
+    flex-direction: column; Affichage en colonnes */
+  }
+ul {
+    list-style: none;
+  }
+  ul li{
+    margin-left: -10px;
+  }
+  /* Style de base pour le bouton */
+button {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: #EEEEEE;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style au survol */
+  button:hover {
+    background-color: #38B198;
+  }
+  
