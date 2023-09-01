@@ -17,6 +17,9 @@
       font-weight:bold;
       color: #38B198;
   }
+  a{
+    text-decoration: none;
+  }
   
   /* html {
     height: 100%;

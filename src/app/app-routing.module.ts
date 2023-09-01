@@ -36,11 +36,12 @@ const routes: Routes = [
   { path: 'rdv', component: CreationrendezvousComponent },
   //  { path: 'accueil', component: AcceuilComponent},
   {path:'loginpatient',component:AjouterpatientComponent},
-  {path:'createpatient',component:PatientloginComponent},
   {path: 'login', component: AdminloginComponent},
   {path: 'listes-rdv', component:ListeRendezVousComponent},
   {path: 'rdv', component:CreationrendezvousComponent},
-  { path: 'listepatient',component:ListepatientComponent}
+  { path: 'listepatient',component:ListepatientComponent},
+  { path: 'patient-login',component:AjouterpatientComponent},
+  { path: 'create-patient',component:PatientloginComponent},
   
 ];
 

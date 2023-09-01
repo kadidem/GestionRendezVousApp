@@ -172,7 +172,11 @@ label {
 input[type="submit"]{
     color: #fff;
     font-size:20px;
-};
+}
+
+a{
+  text-decoration: none;
+}
 /* 
 @media (max-height: 850px) {
  
