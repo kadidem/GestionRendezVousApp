@@ -1,11 +1,13 @@
 <button class="btn" (click)="openDialog()">Créer rendez-vous</button>
-<!-- <div class="calendrier" style="width: 700px; height:700px; margin-top: 30px; margin-left: 70vh; color: #38B198;">
-    <full-calendar [options]="calendarOptions"></full-calendar>
-</div> -->
+<div class="calendrier" style="width: 700px; height:700px; margin-top: 30px; margin-left: 70vh; color: #38B198;">
+    <full-calendar [options]="calendarOptions"  [events]="calendarEvents"></full-calendar>
+    <!-- <ejs-schedule [eventSettings]="eventSettings"></ejs-schedule> -->
 
-<div class="calendar-container">
-  <full-calendar [options]="calendarOptions" [events]="calendarEvents"></full-calendar>
 </div>
+
+<!-- <div class="calendar-container">
+  <full-calendar [options]="calendarOptions" [events]="calendarEvents"></full-calendar>
+</div> -->
 
 
 

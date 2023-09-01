@@ -32,7 +32,6 @@ const routes: Routes = [
   { path: 'liste-doc', component: ListemedecinComponent },
   { path: 'add-doc', component: AjoutermedecinComponent },
   { path: 'liste-rdv', component: CalendrierrendezvousComponent },
-  { path: 'details-rdv', component: DetailsrendezvousComponent },
   { path: 'rdv', component: CreationrendezvousComponent },
   //  { path: 'accueil', component: AcceuilComponent},
   {path:'loginpatient',component:AjouterpatientComponent},
@@ -42,6 +41,7 @@ const routes: Routes = [
   { path: 'listepatient',component:ListepatientComponent},
   { path: 'patient-login',component:AjouterpatientComponent},
   { path: 'create-patient',component:PatientloginComponent},
+  { path: 'details-rdv', component:DetailsrendezvousComponent }
   
 ];
 

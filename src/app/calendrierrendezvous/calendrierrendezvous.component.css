@@ -16,3 +16,12 @@
     margin-top: 90px;
     margin-left: 145vh;
 }
+
+.has-appointment {
+    background-color: #38B198 !important;
+  }
+
+  .fullcalendar-container {
+    background-color: #38B198 !important;
+  }
+  

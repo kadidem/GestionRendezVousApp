@@ -24,11 +24,15 @@ export class AppComponent implements OnInit {
   isListeDocPage: boolean = false;
   isListesRendezVousPage: boolean = false;
   isListeRendezVousPage: boolean = false;
+  isBlankPage: boolean = false;
 
 
   constructor(private router: Router, private showElementService : ShowelementService) {
   this.isVisible = false;
   this.router.events.subscribe((event) => {
+    if (event instanceof NavigationEnd) {
+      this.isBlankPage = event.url === '';
+    }
     if (event instanceof NavigationEnd) {
       this.isAccueilPage = event.url === '/accueil';
     }
