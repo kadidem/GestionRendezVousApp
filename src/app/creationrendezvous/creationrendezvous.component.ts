@@ -28,7 +28,6 @@ export class CreationrendezvousComponent implements OnInit {
   eventForm!: FormGroup;
 
   numRecords: number = 0;
-
  
 
   constructor(
@@ -49,9 +48,9 @@ export class CreationrendezvousComponent implements OnInit {
   }
   
   
-
   ngOnInit(): void {
     this.medecinsSelect = this.medecinService.getMedecin(); 
+
   }
 
 
@@ -69,7 +68,6 @@ export class CreationrendezvousComponent implements OnInit {
       this.route.navigate(['/listes-rdv']);
       
     }
-
      
       
   }

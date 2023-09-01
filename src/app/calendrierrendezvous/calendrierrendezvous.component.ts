@@ -11,6 +11,7 @@ import { DialogService } from '../dialog.service';
 import { AddDoctorService } from '../services/add-doctor.service';
 import { AddAppoitmentService } from '../services/add-appoitment.service';
 import { Medecin } from '../models/medecin.js';
+import { CreateAppoitment } from '../models/create-appoitment';
 // import { View , EventSettingModel } from '@syncfusion/ej2-angular-calendars';
 // import { ViewApi } from '@fullcalendar/core';
 
@@ -29,6 +30,10 @@ export class CalendrierrendezvousComponent implements OnInit {
 
   numRecords: number = 0;
 
+  calendarOptions: CalendarOptions = {};
+  calendarEvents: any[] = [];
+  rdvForms: CreateAppoitment[] = []; // Votre liste de rendez-vous
+
   constructor(
     private formBuilder: FormBuilder,
     private dialogService : DialogService,
@@ -46,28 +51,58 @@ export class CalendrierrendezvousComponent implements OnInit {
   }
 
 
+  ajouterRendezVousAuCalendrier() {
+    // Parcourez la liste de rendez-vous et ajoutez-les au calendrier un par un
+    for (const rdv of this.rdvForms) {
+      this.calendarEvents.push({
+        title: rdv.motif,
+        start: rdv.date + 'T' + rdv.time
+      });
+    }
+  }
+
+
+
   eventSettings: EventSettingsModel = {
     dataSource: []
   };
 
   ngOnInit(): void {
     this.medecinsSelect = this.medecinService.getMedecin(); 
+   
+    this.calendarOptions = {
+      plugins: [dayGridPlugin],
+      initialView: 'dayGridMonth',
+      weekends: true,
+      locale: frLocale,
+          events: [
+        {color:'#38B198', title:"hi"},
+        { title: 'Occupé', start: new Date() }
+      ],
+    };
+
+    // Chargez votre liste de rendez-vous
+    this.rdvForms = this.rdvService.getAppoitment();
+
+    // Ajoutez les rendez-vous au calendrier
+    this.ajouterRendezVousAuCalendrier();
+
   }
 
 
 
 
-  calendarOptions: any = {
-    plugins: [dayGridPlugin],
-    initialView: 'dayGridMonth',
-    weekends: true,
-    locale: frLocale,
-        events: [
-      {color:'#38B198', title:"hi"},
-      { title: 'Occupé', start: new Date() }
-    ],
+  // calendarOption: any = {
+  //   plugins: [dayGridPlugin],
+  //   initialView: 'dayGridMonth',
+  //   weekends: true,
+  //   locale: frLocale,
+  //       events: [
+  //     {color:'#38B198', title:"hi"},
+  //     { title: 'Occupé', start: new Date() }
+  //   ],
    
-  };
+  // };
 
  
 
