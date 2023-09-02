@@ -128,36 +128,30 @@ export class AppComponent implements OnInit {
 
   logoutPatient() {
     Swal.fire({
-      title: 'Voulez-vous vraiment vous déconnecter ?',
+      title: 'Voulez vous vraiment vous déconnecter ?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#38B198',
       cancelButtonColor: 'red',
-      cancelButtonText: 'Non',
-      confirmButtonText: 'Oui'
+      cancelButtonText:'Non'
     })
     .then((result) => {
-      if (result.isConfirmed) {
-        // Effectuez ici les actions de déconnexion, telles que la suppression du jeton ou la déconnexion du service.
-        // Une fois déconnecté, vous pouvez rediriger l'utilisateur vers la page de connexion ou effectuer d'autres actions nécessaires.
-        // Par exemple :
-  
-        Swal.fire({
-          title: 'Vous avez bien été déconnecté. À bientôt !',
-          icon: 'success',
-          confirmButtonColor: '#38B198',
-          confirmButtonText: 'OK'
-        })
-          // Redirigez l'utilisateur vers la page de connexion après confirmation
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'Vous avez bien été déconnecté bye, à bientôt',
+            icon:'success',
+            confirmButtonColor: '#38B198',
+            confirmButtonText: 'OK'
+          })
           this.router.navigate(['/patient-login']);
-       
-      }
-    });
+        }
+      })
+   
   }
 
-  // navigateToLoginPage(){
-  //   this.router.navigate(['/patient-login']);
-  // }
+  navigateToLoginPage(){
+    this.router.navigate(['/patient-login']);
+  }
 
 
  

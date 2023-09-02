@@ -27,15 +27,16 @@
         <li><a routerLink="/accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Accueil</a></li>
         <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer; " *ngIf="isUserLoggedIn()" >Rendez-Vous</a></li>
         <!-- <li><a routerLink="/details-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" > Details Rendez-Vous</a></li> -->
-        <i><a routerLink="/patient-login"  style="font-size: 20px; font-weight: bold; cursor: pointer; color: #fff;" *ngIf="!isLoginPage || isPatientLoginPage"  (click)="isUserLoggedIn()? logoutPatient() : false"> {{isUserLoggedIn() ? 'Déconnection'  : 'Se connecter' }} </a></i>
+        <i><a   style="font-size: 20px; font-weight: bold; cursor: pointer; color: #fff;" *ngIf="!isLoginPage || isPatientLoginPage"  (click)="isUserLoggedIn()? logoutPatient() : navigateToLoginPage()"> {{isUserLoggedIn() ? 'Déconnection'  : 'Se connecter' }} </a></i>
       </ul>
 
       <ul class="nav-list" *ngIf=" isAdminAccueilPage || isListesRendezVousPage  || isListeDocPage || isListePatientPage " >
         <li><a routerLink="/admin-accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Accueil</a></li>
         <li><a routerLink="/listes-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Liste Rendez-Vous</a></li>
         <!-- <li><a routerLink="/liste-patient" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Liste Patient</a></li> -->
+        <!-- <li><a routerLink="/liste-patient" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Liste Patient</a></li> -->
         <li><a routerLink="/liste-doc" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;"  >Liste Medecin</a></li>
-        <i><a (click)="logoutAdmin()" style="font-size: 20px; font-weight: bold; cursor: pointer; color: #fff;"  >Déconnection</a></i>
+        <i><a  (click)="logoutAdmin()" style="font-size: 20px; font-weight: bold; cursor: pointer; color: #fff;"  >Déconnection</a></i>
       </ul>
       
     </nav>

@@ -1,32 +1,4 @@
-<!-- <h2>Login Form</h2>
 
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="../../assets/image/4326320.png"alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Nom</b></label>
-    <input type="text" placeholder="Entrer votre nom" name="uname" required>
-    <label for="uname"><b>Prenom</b></label>
-    <input type="text" placeholder="Entrer votre prenom" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <label for="psw"><b>Confirm Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form> -->
 
 <form [formGroup]="loginForm" (ngSubmit)="login()">
 
@@ -42,33 +14,14 @@
     <label for="email">Email</label>
     <input formControlName="password" type="password" id="password" class="client-info">
     <label for="password">Password</label>
-    <input type="submit" id="submit" class="client-info" style="cursor: pointer;"  value="Se connecetr">
+    <input type="submit" id="submit" class="client-info" style="cursor: pointer;"  value="Se conneceter">
 
     <p  style="color:black ; margin-left: 110px;" > Vous n'avez pas de compte ? <a routerLink="/create-patient" style="color: #38B198; cursor: pointer;">  Créer un compte </a> </p>
   </div>
   </div>
 </div>
 
-<!-- login.component.html -->
-<!-- <form [formGroup]="loginForm" (ngSubmit)="login()">
-  <input formControlName="email" placeholder="Email">
-  <div *ngIf="loginForm.controls.email.hasError('required')" class="error-message">
-    L'email est requis.
-  </div>
-  <div *ngIf="loginForm.controls.email.hasError('email')" class="error-message">
-    L'email doit être une adresse email valide.
-  </div>
-  
-  <input formControlName="password" placeholder="Password" type="password">
-  <div *ngIf="loginForm.controls.password.hasError('required')" class="error-message">
-    Le mot de passe est requis.
-  </div>
 
-  <button type="submit" [disabled]="loginForm.invalid">Login</button>
-  
-  <div *ngIf="loginError" class="error-message">
-    {{ loginError }}
-  </div> -->
 </form>
 
 
