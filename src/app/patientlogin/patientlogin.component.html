@@ -1,12 +1,16 @@
 
 <div id="container" style="margin-top: 30px;">
-    <div id="left"> 
+    <div id="left" style="margin-top: -30px;" > 
     </div>
-    <div id="right"  >
-        <div class="haut" style="margin-top: -60px;">
+    <div id="right" style="margin-top: -180px;" >
+        <div class="haut" >
       <h1 id="login">Créer un compte</h1><br>
-      <form [formGroup]="registerForm" (ngSubmit)="register()">
-      <input formControlName="name" type="text" id="nom" class="client-info">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <input formControlName="prenom" type="text" id="nom" class="client-info">
+      <label for="nom">Prenom</label>
+      <input formControlName="nom" type="text" id="nom" class="client-info">
+      <label for="nom">Nom</label>
+      <input formControlName="username" type="text" id="nom" class="client-info">
       <label for="nom">Nom d'utilisateur</label>
       <input formControlName="email" type="email" id="email" class="client-info">
       <label for="email">Email</label>
@@ -16,8 +20,8 @@
       <label for="password">Mot de passe</label>
       <input type="submit" id="submit" class="client-info" style="cursor: pointer;" value="S'enregistrer">
       
-    </form>
       <p  style="color:black ; margin-left: 110px;" > Vous avez  deja un  compte ? <a routerLink="/create-patient" style="color: #38B198; cursor: pointer;">  Connectez vous </a> </p>
+    </form>
       <!-- <p  style="color:black; margin-left: 120px;"> Vous avez un compte admin ? <a   routerLink="/login" style="color: #38B198; cursor: pointer; " >Se connecter</a> </p> -->
 
     </div>

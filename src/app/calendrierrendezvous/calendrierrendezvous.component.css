@@ -3,6 +3,9 @@
     background-color: #38B198;
     border-color: #38B198;
 }
+.fc-day-number {
+  text-decoration: none !important;
+}
 
 .btn{
     color: #fff !important;

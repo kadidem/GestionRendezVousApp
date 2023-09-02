@@ -9,7 +9,6 @@ import { AjoutermedecinComponent } from './ajoutermedecin/ajoutermedecin.compone
 import { CalendrierrendezvousComponent } from './calendrierrendezvous/calendrierrendezvous.component';
 import { DetailsrendezvousComponent } from './detailsrendezvous/detailsrendezvous.component';
 import { CreationrendezvousComponent } from './creationrendezvous/creationrendezvous.component';
-import { ListepatientComponent } from './listepatient/listepatient.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AjouterpatientComponent } from './ajouterpatient/ajouterpatient.component';
 import { PatientloginComponent } from './patientlogin/patientlogin.component';
@@ -18,6 +17,7 @@ import { AdminaccueilComponent } from './adminaccueil/adminaccueil.component';
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ListepatientComponent } from './listepatient/listepatient.component';
 
 
 
@@ -26,7 +26,7 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: 'accueil', component: AcceuilComponent },  
-  { path: '', component: AcceuilComponent },
+  // { path: '', component: AcceuilComponent },
   { path: 'admin-accueil', component: AdminaccueilComponent },
   { path: 'create-admin', component: CreateAdminAccountComponent },
   { path: 'liste-doc', component: ListemedecinComponent },
@@ -38,10 +38,10 @@ const routes: Routes = [
   {path: 'login', component: AdminloginComponent},
   {path: 'listes-rdv', component:ListeRendezVousComponent},
   {path: 'rdv', component:CreationrendezvousComponent},
-  { path: 'listepatient',component:ListepatientComponent},
   { path: 'patient-login',component:AjouterpatientComponent},
   { path: 'create-patient',component:PatientloginComponent},
-  { path: 'details-rdv', component:DetailsrendezvousComponent }
+  { path: 'details-rdv', component:DetailsrendezvousComponent },
+  {path: 'liste-patient', component:ListepatientComponent},
   
 ];
 

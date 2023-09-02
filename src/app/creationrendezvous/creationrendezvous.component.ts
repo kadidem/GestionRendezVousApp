@@ -65,7 +65,7 @@ export class CreationrendezvousComponent implements OnInit {
         'success'
       )
       this.rdvForm.reset();
-      this.route.navigate(['/listes-rdv']);
+      this.route.navigate(['/liste-rdv']);
       
     }
      

@@ -6,7 +6,6 @@ import { Patient } from '../models/patient';
 })
 export class AddPatientService {
 
-  constructor() { }
 
   private listePat : Patient [] = [];
 
@@ -17,28 +16,42 @@ export class AddPatientService {
     
   }
   
-  //ajout de medecin
-  ajoutPatient(patient : Patient) {
+  constructor() {
+    this.loadPatient();
+  }
+
+  // private savePatients() {
+  //   localStorage.setItem('listePat', JSON.stringify(this.listePat));
+  // }
+
+  private loadPatient() {
+    const data: any = localStorage.getItem('listePat');
+    this.listePat = JSON.parse(data) || [];
+    this.updateIdCount(); // Calculate the next idCount from the loaded data
+  }
+
+  private updateIdCount() {
+    if (this.listePat.length > 0) {
+      this.idCount = Math.max(...this.listePat.map(medecin => medecin.id)) + 1;
+    }
+  }
+
+  ajoutPatient(patient: Patient) {
     patient.id = this.idCount;
-    this.listePat.push(patient);
     this.idCount++;
+    this.listePat.push(patient);
     this.savePatient();
   }
-  
 
-  
   getPatient() {
-    let data : any = localStorage.getItem('listPat');
-    this.listePat = JSON.parse(data)|| [];
     return this.listePat;
+  }
+
+  supprimerPatient(id: number) {
+    const index = this.listePat.findIndex(patient => patient.id === id);
+    if (index !== -1) {
+      this.listePat.splice(index, 1);
+      this.savePatient();
     }
-    
-    supprimerPatient(id : number) {
-      const ID = this.listePat.findIndex(index => index.id === id);
-      
-      if(ID !== -1 ){
-        this.listePat.splice(ID, 1);
-        this.savePatient();
-      }
-    }
+  }
 }

@@ -12,8 +12,10 @@ import { AddAppoitmentService } from '../services/add-appoitment.service';
 import { Medecin } from '../models/medecin.js';
 import { CreateAppoitment } from '../models/create-appoitment';
 import { DetailsrendezvousComponent } from '../detailsrendezvous/detailsrendezvous.component';
+import { Admin } from '../models/admin.js';
 // import { View , EventSettingModel } from '@syncfusion/ej2-angular-calendars';
 // import { ViewApi } from '@fullcalendar/core';
+import { Patient } from '../models/patient';
 
 
 @Component({
@@ -51,7 +53,8 @@ export class CalendrierrendezvousComponent implements OnInit {
       date: ['', Validators.required],
       time: ['', Validators.required],
       doc: ['', Validators.required],
-      motif: ['', Validators.required]
+      motif: ['', Validators.required],
+      patient: [''],
     });
   }
 
@@ -60,12 +63,15 @@ export class CalendrierrendezvousComponent implements OnInit {
   
     //tableau des rdv
 
-
+    // const loggedInPatientName = localStorage.getItem('listePat');
+     const loggedInPatientName = localStorage.getItem('ListePat');
 
     // Parcourez la liste de rendez-vous et ajoutez-les au calendrier un par un
     for (const rdv of this.rdvForms) {
+      // const newAppointment = new CreateAppoitment();
       this.calendarEvents.push({
         title: rdv.motif,
+        // title: `Rdv avec ${patient}`,
         start: rdv.date + 'T' + rdv.time,
       });
 

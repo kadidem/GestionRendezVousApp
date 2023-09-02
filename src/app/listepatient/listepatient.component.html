@@ -6,20 +6,14 @@
   <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
  
  
-  <div class="form-container" (click)="isFormVisible? 'in' : 'void' ">
- 
- <!-- <app-ajouterpatient></app-ajouterpatient> -->
- </div> 
- 
- 
- 
  
    <table width="100%" style="margin-top: 10px;">
  
      <tr>
          <th>Id</th>
-         <th>Nom</th>
          <th>Prenom</th>
+         <th>Nom</th>
+         <th>Nom d'utilisateur</th>
          <th>Email</th>
          <th>Téléphone</th>
          <th>Action</th>
@@ -27,7 +21,9 @@
  
          <tr *ngFor="let pat of patient | paginate: { itemsPerPage: 3, currentPage: p }">
            <td> {{pat.id}} </td>
+           <td> {{pat.prenom}}</td>
            <td> {{pat.nom}}</td>
+           <td> {{pat.username}}</td>
            <td> {{pat.prenom}} </td>
          <td> {{pat.email}} </td>
          <td> {{pat.telephone}}  </td>

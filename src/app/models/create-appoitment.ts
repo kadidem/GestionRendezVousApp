@@ -1,4 +1,5 @@
 import { Medecin } from "./medecin";
+import { Patient } from "./patient.js";
 
 export class CreateAppoitment {
 
@@ -8,6 +9,8 @@ export class CreateAppoitment {
         public time : string,
         public doc : Medecin[],
         public motif: string,
+        private patient: Patient,
+       
         // patient 
     ){}
 
