@@ -13,21 +13,24 @@ export class ListepatientComponent implements OnInit {
 
   constructor(   private dialog: MatDialog, private patientService : AddPatientService) {}
 
-  patient: any[] = [];
+  patient: Patient[] = [];
   m: number = 1;
   p: number =1;
-
-
+  isFormVisible = false;
+  isEditMode = false;
+  
+  
   ngOnInit(): void {
-    this.patient = this.patientService.getPatient();
+    this.patient = this.patientService.getPatients();
     const storageLocal = localStorage.getItem('listePat');
     if(storageLocal){
       this.patient = JSON.parse(storageLocal);
     }
+    console.log("LES PATIENT"+this.patient)
   }
 
   afficherPatient(){
-    return this.patientService.getPatient();
+    return this.patientService.getPatients();
 
   }
 
@@ -35,9 +38,6 @@ export class ListepatientComponent implements OnInit {
   supprimerPatient(patients: Patient){
      this.patientService.supprimerPatient(patients.id);
   }
-      isFormVisible = false;
-      isEditMode=false;
-
         toggleFormWithDelay() {
           setTimeout(() => {
             this.isFormVisible = !this.isFormVisible;

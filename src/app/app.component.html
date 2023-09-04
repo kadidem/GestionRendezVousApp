@@ -3,7 +3,7 @@
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
       <div class="nav-title">
-        Logo
+        <img src="../assets/image/LOGO 2 (1).png" alt="Logo" width="60px;" height="60px;">
       </div>
     </div>
     <!-- <div class="nav-btn">
@@ -15,9 +15,11 @@
     </div> -->
     
     <ul class="nav-list">
-      <li><a routerLink="/accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Accueil</a></li>
-      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Rendez-vous</a></li>
-      <li><a routerLink="/loginpatient" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Se connecter</a></li>
+      <!-- <li><a routerLink="/patient" style="font-size: 20px; font-weight: bold; cursor: pointer;" >ListPatient</a></li> -->
+
+      <li><a routerLink="/accueil" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Accueil</a></li>
+      <li><a routerLink="/liste-rdv" style="font-size: 20px; font-weight: bold; cursor: pointer;">Rendez-vous</a></li>
+      <li><a routerLink="/loginpatient" routerLinkActive="active" style="font-size: 20px; font-weight: bold; cursor: pointer;" >Se connecter</a></li>
       <!-- <i><a routerLink="/login" style="font-size: 20px; font-weight: bold; cursor: pointer;" *ngIf="!isLoginPage">Login</a></i> -->
       
     </ul>
@@ -26,7 +28,11 @@
   <main class="content">
     <router-outlet></router-outlet>
   </main>
+  <div class="bottom">
 
+    <!-- <app-footer ></app-footer> -->
+  </div>
+</div>
   <!-- <footer class="footer">
     <div class="footer">
       <div class="foot">
@@ -44,22 +50,13 @@
   </div>
   
   </footer> -->
-  <app-footer ></app-footer>
-</div>
 
 
-<<<<<<< HEAD
-
-   
-
-
-
- 
 <!-- <app-adminlogin></app-adminlogin> -->
 
 
 <!-- 
-=======
+
 >>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
 <div class="app-container">
     <nav class="nav">
@@ -89,11 +86,11 @@
     <router-outlet></router-outlet>
   </main>
 
-<<<<<<< HEAD
+
   <footer class="footer">
   </footer>
 </div> -->
-=======
+
 
      
   
@@ -126,12 +123,6 @@
     <p>&copy; 2023</p>
   </div>
 </footer> -->
-
-
-
-
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
-
 
 
    

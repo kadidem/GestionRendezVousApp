@@ -1,0 +1,33 @@
+/* Ajoutez ces styles dans votre fichier patient-list.component.css ou un autre fichier CSS dédié */
+
+/* Style pour le tableau */
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style pour l'en-tête du tableau */
+  .table thead th {
+    background-color: #38B198;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style pour les cellules du tableau */
+  .table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style pour les lignes alternatives du tableau */
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style pour mettre en évidence la ligne au survol */
+  .table tbody tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  

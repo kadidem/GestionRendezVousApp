@@ -1,7 +1,6 @@
 @import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
 /* You can add global styles to this file, and also import other style files */
 
-<<<<<<< HEAD
 /* @import "~bootstrap/dist/css/bootstrap.min.css"; */
 @tailwind base;
 @tailwind components;
@@ -9,13 +8,5 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* @import "~bootstrap/dist/css/bootstrap.css."  */
-=======
 @import "~bootstrap/dist/css/bootstrap.css" 
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
-
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */

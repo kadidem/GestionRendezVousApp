@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
-=======
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
+
 
 @Component({
   selector: 'app-header',
@@ -10,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-<<<<<<< HEAD
+
   constructor(private router: Router) {
   }
 
@@ -25,7 +23,6 @@ export class HeaderComponent {
 
 }
 }
-=======
 
-}
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
+
+

@@ -1,55 +1,19 @@
- 
-
-
-  <h2 style="margin-left: 5vh;" id="animation-text">Liste des patients</h2>
-
-  <button  class="btn"  (click)="openDialog()"  >  <i class="fa fa-plus"> </i> Ajouter  </button>
- 
- 
-  <div class="form-container" (click)="isFormVisible? 'in' : 'void' ">
- 
- <!-- <app-ajouterpatient></app-ajouterpatient> -->
- </div> 
- 
- 
- 
- 
-   <table width="100%" style="margin-top: 10px;">
- 
-     <tr>
-         <th>Id</th>
-         <th>Nom</th>
-         <th>Prenom</th>
-         <th>Email</th>
-         <th>Téléphone</th>
-         <th>Action</th>
-    </tr>
- 
-         <tr *ngFor="let pat of patient | paginate: { itemsPerPage: 3, currentPage: p }">
-           <td> {{pat.id}} </td>
-           <td> {{pat.nom}}</td>
-           <td> {{pat.prenom}} </td>
-         <td> {{pat.email}} </td>
-         <td> {{pat.telephone}}  </td>
-         
-         <td>
-           <a (click)="openDialog()"><i class="fas fa-edit" style="color: #38B198;"> </i></a>
-           <a (click)="supprimerPatient(pat)"><i class="fas fa-trash" style="color: red;" > </i></a>
-         </td>
- 
+<div class="container">
+  <h2>Liste des Patients</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Numéro de téléphone</th>
       </tr>
- 
- </table>
- 
- <!-- <pagination-controls style="align-items: center; float: right; color: #38B198;" (pageChange)="p = $event"></pagination-controls> -->
- 
- 
- <script>
-   document.addEventListener("DOMContentLoaded", function() {
-     const animationText = document.getElementById("animation-text");
-   
-     setTimeout(function() {
-       animationText.classList.add("hidden");
-     }, 12000);
-   });
-   </script> 
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.nom }}</td>
+        <td>{{ patient.email }}</td>
+        <td>{{ patient.numero }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

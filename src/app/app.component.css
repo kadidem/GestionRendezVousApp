@@ -124,7 +124,15 @@ a{
   }
   a{
     text-decoration: none;
+  
+  
   }
+
+  /* .bottom{
+    position: relative;
+    bottom: 0;
+  } */
+
   .nav > .nav-list {
     display: flex;
     gap: 2rem;
@@ -159,10 +167,7 @@ a{
       height: 50px;
       padding: 13px;
     }
-    .nav-list{
-
-<<<<<<< HEAD
-    }
+    
     .nav > .nav-btn > label > span {
       display: block;
       width: 25px;
@@ -221,7 +226,6 @@ a{
       display: grid;
       grid-template-columns: 2fr 1fr;
   }     
-=======
   .footer {
     background-color: #38B198;
     margin-top: 30px;
@@ -274,4 +278,4 @@ a{
   }
   
        
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236
+

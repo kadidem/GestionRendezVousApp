@@ -1,4 +1,4 @@
-/* * {box-sizing: border-box} */
+* {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none;}
 img {vertical-align: middle;}
@@ -10,19 +10,9 @@ img {vertical-align: middle;}
   background-color: #38B198;
 
 }
-<<<<<<< HEAD:src/app/acceuil/acceuil.component.css
 .myslider-container img{
   opacity: 0.8;
 }
-=======
-
-img{
-    height: 600px;
-}
-
-
-
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236:src/app/accueil/accueil.component.css
 .slideshow-container {
   padding-top: 30px;
   max-width: 1500px;
@@ -153,8 +143,6 @@ margin-right: 43%;
   opacity: 1;
 }
 .aproposdenous{
-  width:100%;
-  height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 30px;
@@ -164,8 +152,7 @@ margin-right: 43%;
  
 }
 .aproposdenous img{
-  width: 600px;
-  height:500px;
+  width: 400px;
 
 }
 .aproposdenous h3{
@@ -188,9 +175,9 @@ margin-right: 43%;
 }
 .doc img{
     width: 100%;
+    /* height: 0px; */
 }
 .docteurli{
-<<<<<<< HEAD:src/app/acceuil/acceuil.component.css
 display: flex;
 }
 
@@ -232,69 +219,3 @@ ngb-carousel {
 .carousel-indicators{
   z-index: 20;
 }
-=======
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-/* new  */
-.footer {
-  background-color: #38B198;
-  margin-top: 30px;
-  padding: 20px 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.contact-info {
-  flex: 1;
-  text-align: left;
-}
-
-.contact-item {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.contact-item i {
-  margin-right: 10px;
-}
-
-.useful-links ul {
-  list-style: none;
-  padding: 0;
-  text-align: right;
-}
-
-.useful-links li {
-  margin-bottom: 5px;
-}
-
-.useful-links a {
-  color: white;
-  text-decoration: none;
-}
-
-
-
-
-/* p {
-  color: white;
-  margin: 0;
-} */
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236:src/app/accueil/accueil.component.css

@@ -157,8 +157,6 @@ export class CreationrendezvousComponent implements OnInit {
   deleteAppoitement(){
     this.rdvService.supprimerAppoitment(this.rdvForm.value.id);
   }  
-  
- 
 
   openDialog() {
     const dialogRef = this.dialog.open(CreationrendezvousComponent,{

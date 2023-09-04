@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD:src/app/acceuil/acceuil.component.ts
 import { interval } from 'rxjs';
-=======
 import { Router } from '@angular/router';
->>>>>>> 654156e4375ad28da34b5941f8828b5cfa279236:src/app/accueil/accueil.component.ts
+
 
 @Component({
   selector: 'app-acceuil',
